@@ -15,20 +15,44 @@
     ></script>
     <style>
       .header {
-        background-color: blueviolet;
+        background-color: purple;
         font-size: 50px;
         color: black;
         text-align: center;
       }
+
+      #footer {
+        background-color: seashell;
+        display: flex;
+        text-align: center;
+      }
       h2 {
         text-align: center;
+      }
+
+      .imagCrop {
+        max-width: 500px;
+        max-height: 250px;
+        overflow: hidden;
+        text-indent: -50%;
+        
+      }
+      
+      .imagCrop img{
+        max-width: initial;
+
+
       }
       #box1 {
         background-color: chartreuse;
       }
       #boxmiddle {
         background-color: darkgreen;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
+
       #box2 {
         background-color: darkcyan;
       }
@@ -36,38 +60,158 @@
       .box2 {
         background-color: cornflowerblue;
       }
+
+      #leftBoxAlign {
+        text-align: right;
+      }
+      #scores1 {
+        font-size: 30px;
+        text-decoration: underline;
+      }
+      #spanLeft {
+      }
+
+      #spanRight {
+      }
+      #scores2 {
+        font-size: 30px;
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
-    <header class="header">CITY2CITY</header>
+    <div id="container" class="container is-fluid">
+      <header class="header">CITY2CITY</header>
 
-    <h2>
-      This application is built for the client who wants to compare between two
-      cites , in order to make the best decision to move.
-    </h2>
-    <hr>
+      <h2>
+        This application is built for the client who wants to compare between
+        two cites , in order to make the best decision to move.
+      </h2>
+      <hr />
 
-    <div class="columns">
-      <div id="box1" class="column">
-        <div>Enter First City name</div>
-        <input class="input is-rounded" type="text" placeholder="City Name" />
+      <!-- I added a placeholder image -->
+      <div class="columns">
+        <div class="column">
+          <div class="imagCrop">
+            <img
+              id="imag1"
+              src="http://army-of-id.com/wp-content/uploads/2012/07/newyork.jpg"
+              alt="First city results"
+              width="800"
+            />
+          </div>
+        </div>
+        <div class="column">
+          <div class="imagCrop">
+            <img
+              id="imag2"
+              src="https://images.designtrends.com/wp-content/uploads/2016/03/30064554/City-Wallpaper.jpg"
+              alt="Second city results"
+              width="800"
+            />
+          </div>
+        </div>
       </div>
 
-      <div id="boxmiddle" class="column">
-        <a class="button is-large is-link">Compare</a>
-      </div>
+      <div class="columns">
+        <div id="box1" class="column">
+          <div>Enter First City name</div>
+          <input class="input is-rounded" type="text" placeholder="City Name" />
+        </div>
 
-      <div id="box2" class="column">
-        <div>Enter Second City name</div>
-        <input
-          class="input is is-rounded"
-          type="text"
-          placeholder="City Name"
-        />
+        <div id="boxmiddle" class="column">
+          <a id="compareButton" class="button is-large is-link">Compare</a>
+        </div>
+
+        <div id="box2" class="column">
+          <div>Enter Second City name</div>
+          <input
+            class="input is is-rounded"
+            type="text"
+            placeholder="City Name"
+          />
+        </div>
+      </div>
+      <hr />
+      <!-- Results area from selected cities -->
+      <div class="columns">
+        <div class="column" id="box1Results">
+          Weather- Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Possimus, illo officia eligendi repellendus voluptas culpa molestias,
+          soluta rerum esse, aut quod cumque aspernatur quos fuga nobis vero
+          necessitatibus alias qui! So the Weather be like Lorem ipsum, dolor
+          sit amet consectetur adipisicing elit.<br />Porro omnis perferendis
+          error sed incidunt blanditiis recusandae nostrum hic. Possimus quam
+          eligendi reiciendis maxime, vero omnis beatae facere ut in ipsa. Lorem
+          ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptas
+          architecto magni animi facilis consequatur est maiores, pariatur
+          voluptates, illo rem velit modi mollitia eum culpa nam eveniet nostrum
+          sit?
+        </div>
+
+        <!-- leftboxalign is so the scores stay to the right and sit side by side with the other score text -->
+        <div class="column" id="leftBoxAlign">
+          <span id="scores1">Scores</span>
+          <br />
+
+          <span class="spanLeft">score</span>
+          <div class="emptyDiv1">Empty Div1 text</div>
+          <br />
+          <span class="spanLeft">score</span>
+          <div class="emptyDiv1">Empty Div1 text</div>
+          <br />
+          <span class="spanLeft">score</span>
+          <div class="emptyDiv1">Empty Div1 text</div>
+          <br />
+          <span class="spanLeft">score</span>
+          <div class="emptyDiv1">Empty Div1 text</div>
+          <br />
+          <span class="spanLeft">score</span>
+          <div class="emptyDiv1">Empty Div1 text</div>
+          <br />
+        </div>
+
+        <div class="column">
+          <span id="scores2">Scores</span>
+          <br />
+
+          <span class="spanRight">score</span>
+          <div class="emptyDiv2">Empty Div2 text</div>
+          <br />
+          <span class="spanRight">score</span>
+          <div class="emptyDiv2">Empty Div2 text</div>
+          <br />
+          <span class="spanRight">score</span>
+          <div class="emptyDiv2">Empty Div2 text</div>
+          <br />
+          <span class="spanRight">score</span>
+          <div class="emptyDiv2">Empty Div2 text</div>
+          <br />
+          <span class="spanRight">score</span>
+          <div class="emptyDiv2">Empty Div2 text</div>
+          <br />
+        </div>
+
+        <div class="column" id="box2Results">
+          Weather info- Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Beatae laborum numquam, eaque, saepe ex culpa veritatis ratione
+          voluptatem exercitationem aliquam impedit unde vel ducimus illum!
+          Repellendus ipsum animi aliquam at? So the Weather be like Lorem
+          ipsum, dolor sit amet consectetur adipisicing elit.<br />Porro omnis
+          perferendis error sed incidunt blanditiis recusandae nostrum hic.
+          Possimus quam eligendi reiciendis maxime, vero omnis beatae facere ut
+          in ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Soluta esse aperiam enim consequatur, corporis fugit sequi error
+          voluptatum totam, ducimus a saepe facilis architecto excepturi
+          inventore itaque incidunt. Molestiae, aspernatur.
+        </div>
       </div>
     </div>
-    <br />
-    <!-- In case we wanted it all in one page -->
-    <div class="emptyDiv"></div>
+
+    <footer>
+      <div class="footer">
+        Copyright 2019
+      </div>
+    </footer>
   </body>
 </html>
