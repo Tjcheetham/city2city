@@ -11,12 +11,16 @@ var $cityOneResults = $('#city-one-results');
 var $cityTwoResults = $('#city-two-results');
 var $cityOneTeleOverall = $('#city-1-teleport-overall');
 var $cityTwoTeleOverall = $('#city-2-teleport-overall');
+var $cityOneTeleSum = $('#city-1-teleport-summary');
+var $cityTwoTeleSum = $('#city-2-teleport-summary');
+var $cityOneImage = $('#city-1-image');
+var $cityTwoImage = $('#city-2-image');
 var cityOneHasData = false;
 var cityTwoHasData = false;
 var cityOneDataArray = [];
 var cityTwoDataArray = [];
 
-function getCityData(uaSlug, whichCity) {
+function getCityData(uaSlug, uaId, whichCity) {
     $.ajax({
         url: "https://api.teleport.org/api/urban_areas/slug:" + uaSlug + "/scores/",
         method: "GET"
@@ -41,6 +45,7 @@ function getCityData(uaSlug, whichCity) {
                 )
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityOneTeleOverall.text(response.teleport_city_score.toFixed(2));
+                $cityOneTeleSum.text(response.summary);
             }
             else {
                 $cityTwoResults.append(
@@ -50,7 +55,22 @@ function getCityData(uaSlug, whichCity) {
                 )
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityTwoTeleOverall.text(response.teleport_city_score.toFixed(2));
+                $cityTwoTeleSum.text(response.summary);
             }
+        }
+    })
+
+    console.log(uaId)
+    $.ajax({
+        url: "https://api.teleport.org/api/urban_areas/slug:" + uaSlug + "/images/",
+        method: "GET"
+    }).then(function (response) {
+        console.log(response.photos[0].image.web);
+        if (whichCity == 1) {
+            $cityOneImage.attr("src", response.photos[0].image.web);
+        }
+        else {
+            $cityTwoImage.attr("src", response.photos[0].image.web);
         }
     })
 }
@@ -82,7 +102,7 @@ TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
     if (value.uaSlug) {
         cityOneHasData = true;
-        getCityData(value.uaSlug, 1);
+        getCityData(value.uaSlug, value.uaId, 1);
     }
 });
 
@@ -94,6 +114,6 @@ TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
     if (value.uaSlug) {
         cityTwoHasData = true;
-        getCityData(value.uaSlug, 2);
+        getCityData(value.uaSlug, value.uaId, 2);
     }
 });
