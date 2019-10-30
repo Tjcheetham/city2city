@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/teleport-autocomplete.css">
+</head>
+
+<body>
+    <div>
+        <h1>City Autocomplete Example</h1>
+        <input type="text" id="city-choice-1" name="city-1" tabindex="1" autocomplete="off">
+
+        <h3>Result history:</h3>
+        <div id="city-one-results">
+            <h2><span id="city-1-name">City</span></h2>
+            <img id="city-1-wx-icon" src='#' alt="condition icon">
+            <h3>Temperature:&nbsp;</h3>
+            <p><span id="city-1-temp">0</span>&#176;F</p><br>
+            <h3>Humidity:&nbsp;</h3>
+            <p><span id="city-1-humidity">0</span>%</p><br>
+            <h3>Teleport City Score:&nbsp;</h3>
+            <p><span id="city-1-teleport-overall">0</span></p><br>
+            <h3>Teleport City Summary:&nbsp;</h3>
+            <p><span id="city-1-teleport-summary">0</span></p><br>
+            <img id="city-1-image" src='#' alt="city image">
+        </div>
+    </div>
+    <div>
+        <h1>City Autocomplete Example2</h1>
+        <input type="text" id="city-choice-2" name="city-2" tabindex="1" autocomplete="off">
+        
+        <h3>Result history:</h3>
+        <div id="city-two-results">
+            <h2><span id="city-2-name">City</span></h2>
+            <img id="city-2-wx-icon" src='#' alt="condition icon">
+            <h3>Temperature:&nbsp;</h3>
+            <p><span id="city-2-temp">0</span>&#176;F</p><br>
+            <h3>Humidity:&nbsp;</h3>
+            <p><span id="city-2-humidity">0</span>%</p><br>
+            <h3>Teleport City Score:&nbsp;</h3>
+            <p><span id="city-2-teleport-overall">0</span></p><br>
+            <h3>Teleport City Summary:&nbsp;</h3>
+            <p><span id="city-2-teleport-summary">0</span></p><br>
+            <img id="city-2-image" src='#' alt="city image">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="assets/js/teleport-autocomplete.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
