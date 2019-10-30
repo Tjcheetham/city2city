@@ -40,8 +40,12 @@ function getCityData(uaSlug, uaId, whichCity) {
             if (whichCity == 1) {
                 $cityOneResults.append(
                     $("<div>")
-                        .attr("style", "background: " + response.categories[i].color)
-                        .text(response.categories[i].name + " Score of: " + response.categories[i].score_out_of_10.toFixed(1))
+                        .attr("class", "style-name-" + response.categories[i].score_out_of_10.toFixed(0))
+                        .attr("style", "width: 200px; display: inline")
+                        .text(response.categories[i].name)
+                        .append($("<span>")
+                        .text(response.categories[i].score_out_of_10.toFixed(1)))
+                        .append($("<br>"))
                 )
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityOneTeleOverall.text(response.teleport_city_score.toFixed(2));
@@ -97,6 +101,10 @@ function getCityWx(lat, lon, whichCity) {
 //TELEPORTS AUTO COMPLETE FOR CITY 1
 TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
     console.log(value);
+    $cityOneResults.empty();
+    $cityOneTeleOverall.text("");
+    $cityOneTeleSum.text("");
+    $cityOneImage.attr("src", "#")
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
     getCityWx(value.latitude, value.longitude, 1)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
@@ -109,6 +117,10 @@ TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
 //TELEPORTS AUTO COMPLETE FOR CITY 2
 TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     console.log(value);
+    $cityTwoResults.empty();
+    $cityTwoTeleOverall.text("");
+    $cityTwoTeleSum.text("");
+    $cityTwoImage.attr("src", "#")
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
     getCityWx(value.latitude, value.longitude, 2)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
