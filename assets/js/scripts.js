@@ -17,6 +17,8 @@ var $cityOneImage = $('#city-1-image');
 var $cityTwoImage = $('#city-2-image');
 var $cityOneBox = $('#box1');
 var $cityTwoBox = $('#box2');
+var $cityOneBoxResults = $('#box1Results');
+var $cityTwoBoxResults = $('#box2Results');
 var cityOneHasData = false;
 var cityTwoHasData = false;
 var cityOneDataArray = [];
@@ -52,9 +54,11 @@ function getCityData(uaSlug, uaId, whichCity) {
         //STORE THE DATA TO COMPARE LATER
         if (whichCity == 1) {
             cityOneDataArray = response.categories;
+            $cityOneBoxResults.show()
         }
         else {
             cityTwoDataArray = response.categories;
+            $cityTwoBoxResults.show()
         }
 
         $cityOneResults.empty();
@@ -76,6 +80,7 @@ function getCityData(uaSlug, uaId, whichCity) {
                 $cityTwoTeleSum.text(response.summary);
             }
         }
+        $cityOneResults.show();
         refreshChart();
     })
 

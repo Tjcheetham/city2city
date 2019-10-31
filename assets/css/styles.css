@@ -56,7 +56,7 @@ h2 {
     height: 100%;
     z-index: 1;
     opacity: 0.3;
-    background-image: url('../images/citybackdrop2.jpg');
+    background-image: url('../images/citybackdrop2.png');
     background-repeat: no-repeat;
     background-position: center;
     -ms-background-size: cover;
@@ -80,9 +80,28 @@ h2 {
     z-index: 3;
 }
 
-.wx-box {
+.wx-box1 {
+    order: 1;
     border: 2px dashed lightgray;
     border-radius: 15px;
+    display: none;
+    height: 250px;
+}
+
+.wx-box2 {
+    order: 3;
+    border: 2px dashed lightgray;
+    border-radius: 15px;
+    display: none;
+    height: 250px;
+}
+
+.score-container {
+    order: 2;
+    display: none;
+    width: 600px;
+    height: 500px;
+    min-width: 500px;
 }
 
 .city-input-div {
@@ -118,15 +137,6 @@ h2 {
     padding: 0px;
 }
 
-.boxmiddle {
-    /* background-color: darkgreen; */
-    position: relative;
-    top: -50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 #leftBoxAlign {
     text-align: right;
 }
@@ -136,8 +146,22 @@ h2 {
     text-decoration: underline;
 }
 
-
 #scores2 {
     font-size: 30px;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+    .wx-box1 {
+        order: 1;
+    } 
+
+    .wx-box2 {
+        order: 2;
+    }
+    
+    .score-container {
+        order: 3;
+        height: 500px;
+    }
 }
