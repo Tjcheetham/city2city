@@ -80,3 +80,5 @@ $.ajax({
     console.log("Latitude: " + response.coord.lat);
     console.log("Longitude: " + response.coord.lon);
   });
+
+  
