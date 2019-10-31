@@ -1,130 +1,140 @@
 body {
-    background: lightgray;
+  background: lightgray;
 }
 
 .body-area {
-    background: white;
-    border-radius: 25px;
-    padding: 25px;
+  background: #3cc3b2;
+  border-radius: 25px;
+  padding: 25px;
+}
+.section {
+  background-image: url("http://giphygifs.s3.amazonaws.com/media/6Npq1sfHCw6K4/giphy.gif");
+  background-size: 60%;
 }
 
 .header {
-    background-color: #6a737b;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-    border: 7px solid #73c167;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  background-color: #3cc3b2;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+  border: 7px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .logo {
-    margin-bottom: -10px;
+  margin-bottom: -10px;
 }
 
 .footer {
-    position: relative;
-    bottom: 0;
-    border-top: 7px solid #73c167;
-    border-bottom: 7px solid #73c167;
-    width: 100%;
-    text-align: center;
-    background: #6a737b;
-    padding: 10px;
-    margin-top: 20px;
-    color: black;
+  position: relative;
+  bottom: 0;
+  border-top: 7px solid black;
+  border-bottom: 7px solid black;
+  width: 100%;
+  text-align: center;
+  background: #6a737b;
+  padding: 10px;
+  margin-top: 20px;
+  color: black;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
+}
+hr {
+  background-color: #0a080a;
 }
 
 .cities-background {
-    background-image: url("../images/citybackdrop2.png");
-    background-position: center;
-    /* opacity: 0.3; */
-    filter: alpha(opacity=30);
+  background-image: url("../images/citybackdrop2.png");
+  background-position: center;
+  /* opacity: 0.3; */
+  filter: alpha(opacity=30);
 }
 
 #box1 {
-    height: 200px;
-    margin-top: auto;
-    background-position: center;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    margin: auto;
+  height: 200px;
+  margin-top: auto;
+  background-position: center;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  margin: auto;
 }
 
 #box2 {
-    height: 200px;
-    margin-top: auto;
-    background-position: center;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
+  height: 200px;
+  margin-top: auto;
+  background-position: center;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }
 
 .wx-box {
-    border: 2px dashed lightgray;
-    border-radius: 15px;
+  border: 2px dashed black;
+  border-radius: 15px;
+  color: black;
 }
 
 .city-input-div {
-    width: 425px;
-    background: white;
-    opacity: none;
-    filter: alpha(opacity=70);
-    padding: 5px;
-    border-radius: 10px;
-    margin-top: auto;
-    align-content: flex-end;
-    /* text-align: right; */
+  width: 425px;
+  background: white;
+  opacity: none;
+  filter: alpha(opacity=70);
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: auto;
+  align-content: flex-end;
+  /* text-align: right; */
 }
 
 .city-input-div-inside {
-    background: white;
-    opacity: .8;
-    filter: alpha(opacity=100);
+  background: white;
+  opacity: 0.8;
+  filter: alpha(opacity=100);
 }
 
 .imagCrop {
-    max-width: 450px;
-    max-height: 225px;
-    overflow: hidden;
-    text-indent: -50%;
+  max-width: 450px;
+  max-height: 225px;
+  overflow: hidden;
+  text-indent: -50%;
 }
 
 .imagCrop img {
-    max-width: initial;
+  max-width: initial;
 }
 
 .no-pad {
-    padding: 0px;
+  padding: 0px;
 }
 
 .boxmiddle {
-    /* background-color: darkgreen; */
-    position: relative;
-    top: -50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* background-color: darkgreen; */
+  position: relative;
+  top: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #leftBoxAlign {
-    text-align: right;
+  text-align: right;
 }
 
 #scores1 {
-    font-size: 30px;
-    text-decoration: underline;
+  font-size: 30px;
+  text-decoration: underline;
 }
 
-#spanLeft {}
+#spanLeft {
+}
 
-#spanRight {}
+#spanRight {
+}
 
 #scores2 {
-    font-size: 30px;
-    text-decoration: underline;
+  font-size: 30px;
+  text-decoration: underline;
 }
