@@ -7,7 +7,7 @@ var $cityTwoName = $("#city-2-name");
 var $cityTwoIcon = $("#city-2-wx-icon");
 var $cityTwoTemp = $("#city-2-temp");
 var $cityTwoHumidity = $("#city-2-humidity");
-var $cityOneResults = $('#city-one-results');
+var $cityOneResults = $('#container');
 var $cityTwoResults = $('#city-two-results');
 var $cityOneTeleOverall = $('#city-1-teleport-overall');
 var $cityTwoTeleOverall = $('#city-2-teleport-overall');
@@ -21,6 +21,27 @@ var cityOneHasData = false;
 var cityTwoHasData = false;
 var cityOneDataArray = [];
 var cityTwoDataArray = [];
+var currentCityNameOne = "";
+var currentCityNameTwo = "";
+var dataArray = [
+    ['Housing', 0, 0],
+    ['Cost of Living', 0, 0],
+    ['Startups', 0, 0],
+    ['Venture Capital', 0, 0],
+    ['Travel Connectivity', 0, 0],
+    ['Commute', 0, 0],
+    ['Business Freedom', 0, 0],
+    ['Safety', 0, 0],
+    ['Healthcare', 0, 0],
+    ['Education', 0, 0],
+    ['Environmental Quality', 0, 0],
+    ['Economy', 0, 0],
+    ['Taxation', 0, 0],
+    ['Internet Access', 0, 0],
+    ['Leisure and Culture', 0, 0],
+    ['Tolerance', 0, 0],
+    ['Outdoors', 0, 0],
+];
 
 function getCityData(uaSlug, uaId, whichCity) {
     $.ajax({
@@ -36,34 +57,26 @@ function getCityData(uaSlug, uaId, whichCity) {
             cityTwoDataArray = response.categories;
         }
 
+        $cityOneResults.empty();
+
         //lOOPING THROUGH THE CATECORIES AND DISPLAYING THEM TO SEE WHAT WE HAVE
         for (i = 0; i < response.categories.length; i++) {
             //DETERMINING WHICH DIV TO POPULATE
             if (whichCity == 1) {
-                $cityOneResults.append(
-                    $("<div>")
-                        .attr("class", "style-name-" + response.categories[i].score_out_of_10.toFixed(0))
-                        .attr("style", "width: 200px; display: inline")
-                        .text(response.categories[i].name)
-                        .append($("<span>")
-                            .text(response.categories[i].score_out_of_10.toFixed(1)))
-                        .append($("<br>"))
-                )
+                dataArray[i][1] = response.categories[i].score_out_of_10.toFixed(1);
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityOneTeleOverall.text(response.teleport_city_score.toFixed(2));
                 $cityOneTeleSum.text(response.summary);
             }
             else {
-                $cityTwoResults.append(
-                    $("<div>")
-                        .attr("style", "background: " + response.categories[i].color)
-                        .text(response.categories[i].name + " Score of: " + response.categories[i].score_out_of_10.toFixed(1))
-                )
+                dataArray[i][2] = "-" + response.categories[i].score_out_of_10.toFixed(1)
+
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityTwoTeleOverall.text(response.teleport_city_score.toFixed(2));
                 $cityTwoTeleSum.text(response.summary);
             }
         }
+        refreshChart();
     })
 
     console.log(uaId)
@@ -104,12 +117,14 @@ function getCityWx(lat, lon, whichCity) {
 
 //TELEPORTS AUTO COMPLETE FOR CITY 1
 TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
+    if (!value) return;
     console.log(value);
     $cityOneResults.empty();
     $cityOneTeleOverall.text("");
     $cityOneTeleSum.text("");
     $cityOneImage.attr("src", "#")
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
+    currentCityNameOne = value.name + ", " + value.country
     $cityOneName.html(value.name + "<br>" + value.country);
     getCityWx(value.latitude, value.longitude, 1)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
@@ -121,12 +136,14 @@ TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
 
 //TELEPORTS AUTO COMPLETE FOR CITY 2
 TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
+    if (!value) return;
     console.log(value);
     $cityTwoResults.empty();
     $cityTwoTeleOverall.text("");
     $cityTwoTeleSum.text("");
     $cityTwoImage.attr("src", "#")
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
+    currentCityNameTwo = value.name + ", " + value.country
     $cityTwoName.html(value.name + "<br>" + value.country);
     getCityWx(value.latitude, value.longitude, 2)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
@@ -135,3 +152,95 @@ TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
         getCityData(value.uaSlug, value.uaId, 2);
     }
 });
+
+function refreshChart() {
+    // create data set
+    var dataSet = anychart.data.set(dataArray);
+
+    console.log(dataSet);
+
+    // map data for the first series, take x from the zero column and value from the first column of data set
+    var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
+
+    // map data for the second series, take x from the zero column and value from the second column of data set
+    var secondSeriesData = dataSet.mapAs({ x: 0, value: 2 });
+
+    // create bar chart
+    var chart = anychart.bar();
+
+    // turn on chart animation
+    chart.animation(true);
+
+    // set padding
+    chart.padding([10, 20, 5, 20]);
+
+    // force chart to stack values by Y scale.
+    chart.yScale().stackMode('value');
+
+    // format y axis labels so they are always positive
+    chart.yAxis().labels().format(function () {
+        return Math.abs(this.value).toLocaleString();
+    });
+
+    // set title for Y-axis
+    chart.yAxis(0).title('Score');
+
+    // allow labels to overlap
+    chart.xAxis(0).overlapMode('allow-overlap');
+
+    // turn on extra axis for the symmetry
+    chart.xAxis(1)
+        .enabled(true)
+        .orientation('right')
+        .overlapMode('allow-overlap');
+
+    // set chart title text
+    chart.title('City Comparison: Teleport Data Scores');
+
+    chart.interactivity().hoverMode('by-x');
+
+    chart.tooltip()
+        .title(false)
+        .separator(false)
+        .displayMode('separated')
+        .positionMode('point')
+        .useHtml(true)
+        .fontSize(12)
+        .offsetX(5)
+        .offsetY(0)
+        .format(function () {
+            return '<span style="color: #D9D9D9"></span>' + Math.abs(this.value).toLocaleString();
+        });
+
+    // temp variable to store series instance
+    var series;
+
+    // create first series with mapped data
+    series = chart.bar(firstSeriesData);
+    series.name(currentCityNameTwo)
+    // .color('Red');
+    series.tooltip()
+        .position('right')
+        .anchor('left-center');
+
+    // create second series with mapped data
+    series = chart.bar(secondSeriesData);
+    series.name(currentCityNameOne)
+    // .color('Purple');
+    series.tooltip()
+        .position('left')
+        .anchor('right-center');
+
+    // turn on legend
+    chart.legend()
+        .enabled(true)
+        .inverted(true)
+        .fontSize(13)
+        .padding([0, 0, 20, 0]);
+
+    // set container id for the chart
+    chart.container('container');
+
+    // initiate chart drawing
+    chart.draw();
+};
