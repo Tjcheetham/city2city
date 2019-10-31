@@ -77,7 +77,6 @@ hr {
 
 #box1 {
     height: 200px;
-<<<<<<< HEAD
     margin-top: auto;
     background-position: center;
     opacity: 0.8;
@@ -85,17 +84,14 @@ hr {
     margin: auto;
     border-right: 5px solid #6a737b;
     text-align: center;
-=======
     background-position: center;
     opacity: none;
     z-index: 2;
->>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
 }
 
 
 #box2 {
     height: 200px;
-<<<<<<< HEAD
     margin-top: auto;
     margin:auto;
     background-position: center;
@@ -103,7 +99,6 @@ hr {
     filter: alpha(opacity=80);
     text-align: center;
 
-=======
     background-position: center;
     opacity: none;
     z-index: 3;
@@ -152,7 +147,6 @@ hr {
     background-position: center;
     opacity: 0.8;
     filter: alpha(opacity=80);
->>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
 }
 
 .wx-box {
@@ -163,16 +157,11 @@ hr {
 
 .city-input-div {
     width: 425px;
-<<<<<<< HEAD
     background: #6a737b;
-=======
-    background: white;
->>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
     opacity: none;
     filter: alpha(opacity=70);
     padding: 5px;
     border-radius: 10px;
-<<<<<<< HEAD
     display: inline-block;
     text-align: center;
 }
@@ -180,16 +169,6 @@ hr {
 .city-input-div-inside {
     background: #6a737b;
     opacity: .8;
-=======
-    margin-top: auto;
-    align-content: flex-end;
-    /* text-align: right; */
-}
-
-.city-input-div-inside {
-    background: white;
-    opacity: 0.8;
->>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
     filter: alpha(opacity=100);
 }
 
