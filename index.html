@@ -6,6 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>city2city</title>
+  <script
+    src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+  <script
+    src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+  <script
+    src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+  <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"
+    type="text/css" rel="stylesheet">
+  <link
+    href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"
+    type="text/css" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
   <link rel="stylesheet" href="assets/css/teleport-autocomplete.css">
@@ -14,7 +25,7 @@
 
 <body>
   <section class="section">
-    <div id="container" class="container body-area">
+    <div class="container body-area">
       <header class="header"><img src="assets/images/c2c-black.png" alt="header logo"></header>
       <h2>
         This application is built for the client who wants to compare between
@@ -33,23 +44,24 @@
           </div>
         </div>
       </div> -->
-
-      <div class="columns selection-box">
-        <div id="box1" class="column is-6">
-          <div class="city-input-div">
-            <div>Enter First City name</div>
-            <input type="text" id="city-choice-1" class="input is-rounded" name="city-1" placeholder="City Name"
-              tabindex="1" autocomplete="off">
-          </div>
-        </div>
-
-        <div id="box2" class="column is-6 level-right">
+      <div class="cities-background">
+        <div class="columns selection-box">
+          <div id="box1" class="column is-6">
             <div class="city-input-div">
-                <div class="city-input-div-inside">
-            <div>Enter Second City name</div>
-            <input type="text" id="city-choice-2" class="input is-rounded" name="city-2" placeholder="City Name"
-              tabindex="2" autocomplete="off">
+              <div>Enter First City name</div>
+              <input type="text" id="city-choice-1" class="input is-rounded" name="city-1" placeholder="City Name"
+                tabindex="1" autocomplete="off">
+            </div>
           </div>
+
+          <div id="box2" class="column is-6 level-right">
+            <div class="city-input-div">
+              <div class="city-input-div-inside">
+                <div>Enter Second City name</div>
+                <input type="text" id="city-choice-2" class="input is-rounded" name="city-2" placeholder="City Name"
+                  tabindex="2" autocomplete="off">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -60,65 +72,25 @@
 
       <hr />
       <!-- Results area from selected cities -->
-      <div class="columns">
+      <div class="columns" style="height: 500px">
         <div class="column is-2 wx-box" id="box1Results">
-            <h2><span id="city-1-name">City</span></h2>
-            <img id="city-1-wx-icon" src='#' alt="condition icon">
-            <h3>Temperature:&nbsp;</h3>
-            <p><span id="city-1-temp">0</span>&#176;F</p><br>
-            <h3>Humidity:&nbsp;</h3>
-            <p><span id="city-1-humidity">0</span>%</p><br>
+          <h2><span id="city-1-name">City</span></h2>
+          <img id="city-1-wx-icon" src='#' alt="condition icon">
+          <h3>Temperature:&nbsp;</h3>
+          <p><span id="city-1-temp">0</span>&#176;F</p><br>
+          <h3>Humidity:&nbsp;</h3>
+          <p><span id="city-1-humidity">0</span>%</p><br>
         </div>
 
         <!-- leftboxalign is so the scores stay to the right and sit side by side with the other score text -->
-        <div class="column is-4" id="leftBoxAlign">
-          <span id="scores1">Scores</span>
-          <br />
-
-          <span class="spanLeft">score</span>
-          <div class="emptyDiv1">Empty Div1 text</div>
-          <br />
-          <span class="spanLeft">score</span>
-          <div class="emptyDiv1">Empty Div1 text</div>
-          <br />
-          <span class="spanLeft">score</span>
-          <div class="emptyDiv1">Empty Div1 text</div>
-          <br />
-          <span class="spanLeft">score</span>
-          <div class="emptyDiv1">Empty Div1 text</div>
-          <br />
-          <span class="spanLeft">score</span>
-          <div class="emptyDiv1">Empty Div1 text</div>
-          <br />
-        </div>
-
-        <div class="column is-4">
-          <span id="scores2">Scores</span>
-          <br />
-
-          <span class="spanRight">score</span>
-          <div class="emptyDiv2">Empty Div2 text</div>
-          <br />
-          <span class="spanRight">score</span>
-          <div class="emptyDiv2">Empty Div2 text</div>
-          <br />
-          <span class="spanRight">score</span>
-          <div class="emptyDiv2">Empty Div2 text</div>
-          <br />
-          <span class="spanRight">score</span>
-          <div class="emptyDiv2">Empty Div2 text</div>
-          <br />
-          <span class="spanRight">score</span>
-          <div class="emptyDiv2">Empty Div2 text</div>
-          <br />
-        </div>
+        <div class="column is-8" id="container"></div>
 
         <div class="column is-2 wx-box" id="box2Results">
-            <h2><span id="city-2-name">City</span></h2>
-            <img id="city-2-wx-icon" src='#' alt="condition icon">
-            <h3>Temperature:&nbsp;</h3>
-            <p><span id="city-2-temp">0</span>&#176;F</p><br>
-            <h3>Humidity:&nbsp;</h3>
+          <h2><span id="city-2-name">City</span></h2>
+          <img id="city-2-wx-icon" src='#' alt="condition icon">
+          <h3>Temperature:&nbsp;</h3>
+          <p><span id="city-2-temp">0</span>&#176;F</p><br>
+          <h3>Humidity:&nbsp;</h3>
         </div>
       </div>
     </div>
@@ -134,6 +106,122 @@
     integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
   <script src="assets/js/teleport-autocomplete.js"></script>
   <script src="assets/js/scripts.js"></script>
+  <script>
+
+    anychart.onDocumentReady(function () {
+      // create data set
+      var dataSet = anychart.data.set(getData());
+
+      // map data for the first series, take x from the zero column and value from the first column of data set
+      var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
+
+      // map data for the second series, take x from the zero column and value from the second column of data set
+      var secondSeriesData = dataSet.mapAs({ x: 0, value: 2 });
+
+      // create bar chart
+      var chart = anychart.bar();
+
+      // turn on chart animation
+      chart.animation(true);
+
+      // set padding
+      chart.padding([10, 20, 5, 20]);
+
+      // force chart to stack values by Y scale.
+      chart.yScale().stackMode('value');
+
+      // format y axis labels so they are always positive
+      chart.yAxis().labels().format(function () {
+        return Math.abs(this.value).toLocaleString();
+      });
+
+      // set title for Y-axis
+      chart.yAxis(0).title('Score');
+
+      // allow labels to overlap
+      chart.xAxis(0).overlapMode('allow-overlap');
+
+      // turn on extra axis for the symmetry
+      chart.xAxis(1)
+        .enabled(true)
+        .orientation('right')
+        .overlapMode('allow-overlap');
+
+      // set chart title text
+      chart.title('City Comparison: Teleport Data Scores');
+
+      chart.interactivity().hoverMode('by-x');
+
+      chart.tooltip()
+        .title(false)
+        .separator(false)
+        .displayMode('separated')
+        .positionMode('point')
+        .useHtml(true)
+        .fontSize(12)
+        .offsetX(5)
+        .offsetY(0)
+        .format(function () {
+          return '<span style="color: #D9D9D9">$</span>' + Math.abs(this.value).toLocaleString();
+        });
+
+      // temp variable to store series instance
+      var series;
+
+      // create first series with mapped data
+      series = chart.bar(firstSeriesData);
+      series.name('City 2')
+      // .color('Red');
+      series.tooltip()
+        .position('right')
+        .anchor('left-center');
+
+      // create second series with mapped data
+      series = chart.bar(secondSeriesData);
+      series.name('City 1')
+      // .color('Purple');
+      series.tooltip()
+        .position('left')
+        .anchor('right-center');
+
+      // turn on legend
+      chart.legend()
+        .enabled(true)
+        .inverted(true)
+        .fontSize(13)
+        .padding([0, 0, 20, 0]);
+
+      // set container id for the chart
+      chart.container('container');
+
+      // initiate chart drawing
+      chart.draw();
+    });
+
+    function getData() {
+      //create variables for score population?
+      return [
+        ['Housing', 6, -5],
+        ['Cost of Living', 9, -4],
+        ['Startups', 8, -3],
+        ['Venture Capital', 3, -9],
+        ['Travel Connectivity', 7, -7],
+        ['Commute', 7, -6],
+        ['Business Freedom', 8, -9],
+        ['Safety', 4, -8],
+        ['Healthcare', 9, -6],
+        ['Education', 6, -8],
+        ['Environmental Quality', 7, -7],
+        ['Economy', 6, -9],
+        ['Taxation', 3, -8],
+        ['Internet Access', 9, -7],
+        ['Leisure and Culture', 3, -8],
+        ['Tolerance', 6, -8],
+        ['Outdoors', 7, -8],
+      ];
+    }
+
+  </script>
 </body>
 
 </html>
