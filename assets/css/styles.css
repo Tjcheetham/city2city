@@ -1,3 +1,13 @@
+body {
+    background: lightgray;
+}
+
+.body-area {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+}
+
 .header {
     /* background-color: purple; */
     font-size: 50px;
@@ -5,10 +15,12 @@
     text-align: center;
 }
 
-#footer {
+.footer {
     background-color: seashell;
+    height: 100px;
     display: flex;
     text-align: center;
+    padding: 10px;
 }
 
 h2 {
@@ -21,6 +33,7 @@ h2 {
     background-position: center;
     opacity: 0.8;
     filter: alpha(opacity=80);
+    margin: auto;
 }
 
 #box2 {
@@ -29,6 +42,11 @@ h2 {
     background-position: center;
     opacity: 0.8;
     filter: alpha(opacity=80);
+}
+
+.wx-box {
+    border: 2px dashed lightgray;
+    border-radius: 15px;
 }
 
 .city-input-div {
