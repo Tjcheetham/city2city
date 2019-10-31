@@ -1,0 +1,117 @@
+body {
+    background: lightgray;
+}
+
+.body-area {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.header {
+    /* background-color: purple; */
+    font-size: 50px;
+    color: black;
+    text-align: center;
+}
+
+.footer {
+    background-color: seashell;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.cities-background {
+    background-image: url("assets/images/citybackdrop2.jpg");
+    background-position: center;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+#box1 {
+    height: 200px;
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    margin: auto;
+}
+
+#box2 {
+    height: 200px;
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.wx-box {
+    border: 2px dashed lightgray;
+    border-radius: 15px;
+}
+
+.city-input-div {
+    width: 425px;
+    background: white;
+    /* opacity: 0.7;
+    filter: alpha(opacity=70); */
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: auto;
+    align-content: flex-end;
+    /* text-align: right; */
+}
+
+.city-input-div-inside {
+    background: white;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.imagCrop {
+    max-width: 450px;
+    max-height: 225px;
+    overflow: hidden;
+    text-indent: -50%;
+}
+
+.imagCrop img {
+    max-width: initial;
+}
+
+.no-pad {
+    padding: 0px;
+}
+
+.boxmiddle {
+    /* background-color: darkgreen; */
+    position: relative;
+    top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#leftBoxAlign {
+    text-align: right;
+}
+
+#scores1 {
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+#spanLeft {}
+
+#spanRight {}
+
+#scores2 {
+    font-size: 30px;
+    text-decoration: underline;
+}
