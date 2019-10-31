@@ -1,152 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>City2City</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
-    <style>
-      .header {
-        background-color: purple;
-        font-size: 50px;
-        color: black;
-        text-align: center;
-      }
 
-      #footer {
-        background-color: seashell;
-        display: flex;
-        text-align: center;
-      }
-      h2 {
-        text-align: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>city2city</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+  <link rel="stylesheet" href="assets/css/teleport-autocomplete.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
 
-      .imagCrop {
-        max-width: 500px;
-        max-height: 250px;
-        overflow: hidden;
-        text-indent: -50%;
-        
-      }
-      
-      .imagCrop img{
-        max-width: initial;
-
-
-      }
-      #box1 {
-        background-color: chartreuse;
-      }
-      #boxmiddle {
-        background-color: darkgreen;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #box2 {
-        background-color: darkcyan;
-      }
-
-      .box2 {
-        background-color: cornflowerblue;
-      }
-
-      #leftBoxAlign {
-        text-align: right;
-      }
-      #scores1 {
-        font-size: 30px;
-        text-decoration: underline;
-      }
-      #spanLeft {
-      }
-
-      #spanRight {
-      }
-      #scores2 {
-        font-size: 30px;
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container" class="container is-fluid">
-      <header class="header">CITY2CITY</header>
-
+<body>
+  <section class="section">
+    <div id="container" class="container">
+      <header class="header"><img src="assets/images/c2c-black.png" alt="header logo"></header>
       <h2>
         This application is built for the client who wants to compare between
         two cites , in order to make the best decision to move.
       </h2>
-      <hr />
-
-      <!-- I added a placeholder image -->
-      <div class="columns">
-        <div class="column">
+      <hr>
+      <!-- <div class="columns">
+        <div class="column level-left no-pad" style="border: 1px solid black">
           <div class="imagCrop">
-            <img
-              id="imag1"
-              src="http://army-of-id.com/wp-content/uploads/2012/07/newyork.jpg"
-              alt="First city results"
-              width="800"
-            />
+            <img id="city-1-image" src='#' alt="city image" width="800px">
           </div>
         </div>
-        <div class="column">
+        <div class="column level-right no-pad" style="border: 1px solid black">
           <div class="imagCrop">
-            <img
-              id="imag2"
-              src="https://images.designtrends.com/wp-content/uploads/2016/03/30064554/City-Wallpaper.jpg"
-              alt="Second city results"
-              width="800"
-            />
+            <img id="city-2-image" src='#' alt="city image" width="800px">
+          </div>
+        </div>
+      </div> -->
+
+      <div class="columns selection-box">
+        <div id="box1" class="column is-6">
+          <div class="city-input-div">
+            <div>Enter First City name</div>
+            <input type="text" id="city-choice-1" class="input is-rounded" name="city-1" placeholder="City Name"
+              tabindex="1" autocomplete="off">
+          </div>
+        </div>
+
+        <div id="box2" class="column is-6 level-right">
+            <div class="city-input-div">
+                <div class="city-input-div-inside">
+            <div>Enter Second City name</div>
+            <input type="text" id="city-choice-2" class="input is-rounded" name="city-2" placeholder="City Name"
+              tabindex="2" autocomplete="off">
+          </div>
           </div>
         </div>
       </div>
 
-      <div class="columns">
-        <div id="box1" class="column">
-          <div>Enter First City name</div>
-          <input class="input is-rounded" type="text" placeholder="City Name" />
-        </div>
-
-        <div id="boxmiddle" class="column">
-          <a id="compareButton" class="button is-large is-link">Compare</a>
-        </div>
-
-        <div id="box2" class="column">
-          <div>Enter Second City name</div>
-          <input
-            class="input is is-rounded"
-            type="text"
-            placeholder="City Name"
-          />
-        </div>
+      <div id="boxmiddle" class="boxmiddle">
+        <a id="compareButton" class="button is-large is-link">Compare</a>
       </div>
+
       <hr />
       <!-- Results area from selected cities -->
       <div class="columns">
         <div class="column" id="box1Results">
-          Weather- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Possimus, illo officia eligendi repellendus voluptas culpa molestias,
-          soluta rerum esse, aut quod cumque aspernatur quos fuga nobis vero
-          necessitatibus alias qui! So the Weather be like Lorem ipsum, dolor
-          sit amet consectetur adipisicing elit.<br />Porro omnis perferendis
-          error sed incidunt blanditiis recusandae nostrum hic. Possimus quam
-          eligendi reiciendis maxime, vero omnis beatae facere ut in ipsa. Lorem
-          ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptas
-          architecto magni animi facilis consequatur est maiores, pariatur
-          voluptates, illo rem velit modi mollitia eum culpa nam eveniet nostrum
-          sit?
+            <h2><span id="city-1-name">City</span></h2>
+            <img id="city-1-wx-icon" src='#' alt="condition icon">
+            <h3>Temperature:&nbsp;</h3>
+            <p><span id="city-1-temp">0</span>&#176;F</p><br>
+            <h3>Humidity:&nbsp;</h3>
+            <p><span id="city-1-humidity">0</span>%</p><br>
         </div>
 
         <!-- leftboxalign is so the scores stay to the right and sit side by side with the other score text -->
@@ -193,25 +114,26 @@
         </div>
 
         <div class="column" id="box2Results">
-          Weather info- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Beatae laborum numquam, eaque, saepe ex culpa veritatis ratione
-          voluptatem exercitationem aliquam impedit unde vel ducimus illum!
-          Repellendus ipsum animi aliquam at? So the Weather be like Lorem
-          ipsum, dolor sit amet consectetur adipisicing elit.<br />Porro omnis
-          perferendis error sed incidunt blanditiis recusandae nostrum hic.
-          Possimus quam eligendi reiciendis maxime, vero omnis beatae facere ut
-          in ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Soluta esse aperiam enim consequatur, corporis fugit sequi error
-          voluptatum totam, ducimus a saepe facilis architecto excepturi
-          inventore itaque incidunt. Molestiae, aspernatur.
+            <h2><span id="city-2-name">City</span></h2>
+            <img id="city-2-wx-icon" src='#' alt="condition icon">
+            <h3>Temperature:&nbsp;</h3>
+            <p><span id="city-2-temp">0</span>&#176;F</p><br>
+            <h3>Humidity:&nbsp;</h3>
         </div>
       </div>
     </div>
+  </section>
+  <footer>
+    <div class="footer">
+      Copyright 2019
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+  <script src="assets/js/teleport-autocomplete.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
 
-    <footer>
-      <div class="footer">
-        Copyright 2019
-      </div>
-    </footer>
-  </body>
 </html>
