@@ -1,90 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>City2City</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
-    <style>
-      .header {
-        background-color: purple;
-        font-size: 50px;
-        color: black;
-        text-align: center;
-      }
-
-      #footer {
-        background-color: seashell;
-        display: flex;
-        text-align: center;
-      }
-      h2 {
-        text-align: center;
-      }
-
-      .imagCrop {
-        max-width: 500px;
-        max-height: 250px;
-        overflow: hidden;
-        text-indent: -50%;
-        
-      }
-      
-      .imagCrop img{
-        max-width: initial;
-
-
-      }
-      #box1 {
-        background-color: chartreuse;
-      }
-      #boxmiddle {
-        background-color: darkgreen;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #box2 {
-        background-color: darkcyan;
-      }
-
-      .box2 {
-        background-color: cornflowerblue;
-      }
-
-      /* #leftBoxAlign {
-        text-align: right;
-      } */
-      #scores1 {
-        font-size: 30px;
-        text-decoration: underline;
-      }
-      #spanLeft {
-      }
-
-      #spanRight {
-      }
-      #scores2 {
-        font-size: 30px;
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container" class="container is-fluid">
-      <header class="header">CITY2CITY</header>
-=======
->>>>>>> 6c4ca0ec0748cf2ddb34a54d8226bf20587d3561
 
 <head>
   <meta charset="UTF-8" />
@@ -110,7 +25,7 @@
 
 <body>
   <section class="section">
-    <div class="container body-area">
+    <div id="containerColor" class="container body-area">
       <header class="header"><img src="assets/images/c2c-black.png" alt="header logo"></header>
       <h2>
         This application is built for the client who wants to compare between
@@ -152,7 +67,7 @@
       </div>
 
       <div id="boxmiddle" class="boxmiddle">
-        <a id="compareButton" class="button is-large is-link">Compare</a>
+        <a id="compareButton" class="button is-large is-link is-hidden">Compare</a>
       </div>
 
       <hr />
