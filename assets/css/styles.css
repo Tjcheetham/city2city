@@ -54,6 +54,14 @@ h2 {
     opacity: 0.8;
     filter: alpha(opacity=80);
     margin: auto;
+    margin-right: 10px;
+}
+
+.img-spacing {
+    margin: 10px;
+    background-color: #3cc3b2;
+    z-index: 99;
+    opacity: 1;
 }
 
 #box2 {
@@ -62,6 +70,7 @@ h2 {
     background-position: center;
     opacity: 0.8;
     filter: alpha(opacity=80);
+    margin-left: 10px;
 }
 
 .wx-box {
