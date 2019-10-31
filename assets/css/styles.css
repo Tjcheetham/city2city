@@ -9,6 +9,7 @@ body {
 }
 
 .header {
+<<<<<<< HEAD
     font-size: 50px;
     color: black;
     text-align: center;
@@ -18,14 +19,33 @@ body {
 #containerColor{
 /* background-color: #3cc3b2; */
 
+=======
+    background-color: #6a737b;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    border: 7px solid #73c167;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo {
+    margin-bottom: -10px;
+>>>>>>> 3b4b02a93f3634ad0544f6a5dc39403a7926a0ca
 }
 
 .footer {
-    background-color: seashell;
-    height: 100px;
-    display: flex;
+    position: relative;
+    bottom: 0;
+    border-top: 7px solid #73c167;
+    border-bottom: 7px solid #73c167;
+    width: 100%;
     text-align: center;
+    background: #6a737b;
     padding: 10px;
+    margin-top: 20px;
+    color: black;
 }
 
 h2 {
