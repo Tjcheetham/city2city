@@ -27,6 +27,13 @@ h2 {
     text-align: center;
 }
 
+.cities-background {
+    background-image: url("assets/images/citybackdrop2.jpg");
+    background-position: center;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
 #box1 {
     height: 200px;
     margin-top: auto;
