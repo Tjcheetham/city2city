@@ -28,7 +28,7 @@ h2 {
 }
 
 .cities-background {
-    background-image: url("assets/images/citybackdrop2.jpg");
+    background-image: url("../images/citybackdrop2.jpg");
     background-position: center;
     opacity: 0.3;
     filter: alpha(opacity=30);
