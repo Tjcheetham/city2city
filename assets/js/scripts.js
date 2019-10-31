@@ -15,6 +15,8 @@ var $cityOneTeleSum = $('#city-1-teleport-summary');
 var $cityTwoTeleSum = $('#city-2-teleport-summary');
 var $cityOneImage = $('#city-1-image');
 var $cityTwoImage = $('#city-2-image');
+var $cityOneBox = $('#box1');
+var $cityTwoBox = $('#box2');
 var cityOneHasData = false;
 var cityTwoHasData = false;
 var cityOneDataArray = [];
@@ -44,7 +46,7 @@ function getCityData(uaSlug, uaId, whichCity) {
                         .attr("style", "width: 200px; display: inline")
                         .text(response.categories[i].name)
                         .append($("<span>")
-                        .text(response.categories[i].score_out_of_10.toFixed(1)))
+                            .text(response.categories[i].score_out_of_10.toFixed(1)))
                         .append($("<br>"))
                 )
                 //OVERALL SCORE CALCULATED BY TELEPORT
@@ -71,10 +73,12 @@ function getCityData(uaSlug, uaId, whichCity) {
     }).then(function (response) {
         console.log(response.photos[0].image.web);
         if (whichCity == 1) {
-            $cityOneImage.attr("src", response.photos[0].image.web);
+            // $cityOneImage.attr("src", response.photos[0].image.web);
+            $cityOneBox.css("background-image", "url(" + response.photos[0].image.web + ")");
         }
         else {
-            $cityTwoImage.attr("src", response.photos[0].image.web);
+            // $cityTwoImage.attr("src", response.photos[0].image.web);
+            $cityTwoBox.css("background-image", "url(" + response.photos[0].image.web + ")");
         }
     })
 }
@@ -106,6 +110,7 @@ TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
     $cityOneTeleSum.text("");
     $cityOneImage.attr("src", "#")
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
+    $cityOneName.text(value.title);
     getCityWx(value.latitude, value.longitude, 1)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
     if (value.uaSlug) {
@@ -122,6 +127,7 @@ TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     $cityTwoTeleSum.text("");
     $cityTwoImage.attr("src", "#")
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
+    $cityTwoName.text(value.title);
     getCityWx(value.latitude, value.longitude, 2)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
     if (value.uaSlug) {
