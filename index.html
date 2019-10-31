@@ -31,18 +31,6 @@
       </header>
       
       <hr>
-      <!-- <div class="columns">
-        <div class="column level-left no-pad" style="border: 1px solid black">
-          <div class="imagCrop">
-            <img id="city-1-image" src='#' alt="city image" width="800px">
-          </div>
-        </div>
-        <div class="column level-right no-pad" style="border: 1px solid black">
-          <div class="imagCrop">
-            <img id="city-2-image" src='#' alt="city image" width="800px">
-          </div>
-        </div>
-      </div> -->
       <div class="cities-background">
         <div class="columns selection-box">
           <div id="box1" class="column is-6">
@@ -52,8 +40,13 @@
                 tabindex="1" autocomplete="off">
             </div>
           </div>
+<<<<<<< HEAD
         
           <div id="box2" class="column is-6 level-right">
+=======
+
+          <div id="box2" class="column is-6">
+>>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
             <div class="city-input-div">
               <div class="city-input-div-inside">
                 <div>Enter Second City name</div>
@@ -65,14 +58,10 @@
         </div>
       </div>
 
-      <div id="boxmiddle" class="boxmiddle">
-        <a id="compareButton" class="button is-large is-link is-hidden">Compare</a>
-      </div>
-
       <hr />
       <!-- Results area from selected cities -->
-      <div class="columns" style="height: 500px">
-        <div class="column is-2 wx-box" id="box1Results">
+      <div class="columns is-mobile is-flex">
+        <div class="column is-6-mobile is-2 wx-box1" id="box1Results">
           <h2><span id="city-1-name">City</span></h2>
           <img id="city-1-wx-icon" src='#' alt="condition icon">
           <h3>Temperature:&nbsp;</h3>
@@ -82,14 +71,15 @@
         </div>
 
         <!-- leftboxalign is so the scores stay to the right and sit side by side with the other score text -->
-        <div class="column is-8" id="container"></div>
+        <div class="column is-12-mobile is-8 score-container" id="container"></div>
 
-        <div class="column is-2 wx-box" id="box2Results">
+        <div class="column is-6-mobile is-2 wx-box2" id="box2Results">
           <h2><span id="city-2-name">City</span></h2>
           <img id="city-2-wx-icon" src='#' alt="condition icon">
           <h3>Temperature:&nbsp;</h3>
           <p><span id="city-2-temp">0</span>&#176;F</p><br>
           <h3>Humidity:&nbsp;</h3>
+          <p><span id="city-2-humidity">0</span>%</p><br>
         </div>
       </div>
     </div>

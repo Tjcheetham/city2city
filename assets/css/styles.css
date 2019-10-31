@@ -1,57 +1,140 @@
 body {
-  background: lightgray;
+    background: lightgray;
 }
 
 .body-area {
-  background: #3cc3b2;
-  border-radius: 25px;
-  padding: 25px;
+    background: #3cc3b2;
+    border-radius: 25px;
+    padding: 25px;
 }
+
 .section {
-  background-image: url("http://giphygifs.s3.amazonaws.com/media/6Npq1sfHCw6K4/giphy.gif");
-  background-size: 60%;
+    background-image: url("http://giphygifs.s3.amazonaws.com/media/6Npq1sfHCw6K4/giphy.gif");
+    background-size: 60%;
 }
 
 .header {
-  background-color: #3cc3b2;
-  font-size: 18px;
-  color: black;
-  text-align: center;
-  border-radius: 10px;
-  border: 7px solid black;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    background-color: #3cc3b2;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    border: 7px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .logo {
-  margin-bottom: -10px;
+    margin-bottom: -10px;
 }
 
 .footer {
-  position: relative;
-  bottom: 0;
-  border-top: 7px solid black;
-  border-bottom: 7px solid black;
-  width: 100%;
-  text-align: center;
-  background: #6a737b;
-  padding: 10px;
-  margin-top: 20px;
-  color: black;
+    position: relative;
+    bottom: 0;
+    border-top: 7px solid black;
+    border-bottom: 7px solid black;
+    width: 100%;
+    text-align: center;
+    background: #6a737b;
+    padding: 10px;
+    margin-top: 20px;
+    color: black;
 }
 
 h2 {
-  text-align: center;
+    text-align: center;
 }
+
 hr {
-  background-color: #0a080a;
+    background-color: #0a080a;
 }
 
 .cities-background {
-  background-image: url("../images/citybackdrop2.png");
-  background-position: center;
-  /* opacity: 0.3; */
-  filter: alpha(opacity=30);
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+}
+
+.cities-background:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+    background-image: url('../images/citybackdrop2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#box1 {
+    height: 200px;
+<<<<<<< HEAD
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    margin: auto;
+    border-right: 5px solid #6a737b;
+    text-align: center;
+=======
+    background-position: center;
+    opacity: none;
+    z-index: 2;
+>>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
+}
+
+
+#box2 {
+    height: 200px;
+<<<<<<< HEAD
+    margin-top: auto;
+    margin:auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    text-align: center;
+
+=======
+    background-position: center;
+    opacity: none;
+    z-index: 3;
+}
+
+.wx-box1 {
+    order: 1;
+    border: 2px dashed lightgray;
+    border-radius: 15px;
+    display: none;
+    height: 250px;
+}
+
+.wx-box2 {
+    order: 3;
+    border: 2px dashed lightgray;
+    border-radius: 15px;
+    display: none;
+    height: 250px;
+}
+
+.score-container {
+    order: 2;
+    display: none;
+    width: 600px;
+    height: 500px;
+    min-width: 500px;
+    background-image: url("../images/citybackdrop2.png");
+    background-position: center;
+    /* opacity: 0.3; */
+    filter: alpha(opacity=30);
 }
 
 #box1 {
@@ -61,35 +144,35 @@ hr {
     opacity: 0.8;
     filter: alpha(opacity=80);
     margin: auto;
-    border-right: 5px solid #6a737b;
-    text-align: center;
 }
-
 
 #box2 {
     height: 200px;
     margin-top: auto;
-    margin:auto;
     background-position: center;
     opacity: 0.8;
     filter: alpha(opacity=80);
-    text-align: center;
-
+>>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
 }
 
 .wx-box {
-  border: 2px dashed black;
-  border-radius: 15px;
-  color: black;
+    border: 2px dashed black;
+    border-radius: 15px;
+    color: black;
 }
 
 .city-input-div {
     width: 425px;
+<<<<<<< HEAD
     background: #6a737b;
+=======
+    background: white;
+>>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
     opacity: none;
     filter: alpha(opacity=70);
     padding: 5px;
     border-radius: 10px;
+<<<<<<< HEAD
     display: inline-block;
     text-align: center;
 }
@@ -97,49 +180,57 @@ hr {
 .city-input-div-inside {
     background: #6a737b;
     opacity: .8;
+=======
+    margin-top: auto;
+    align-content: flex-end;
+    /* text-align: right; */
+}
+
+.city-input-div-inside {
+    background: white;
+    opacity: 0.8;
+>>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
     filter: alpha(opacity=100);
 }
 
 .imagCrop {
-  max-width: 450px;
-  max-height: 225px;
-  overflow: hidden;
-  text-indent: -50%;
+    max-width: 450px;
+    max-height: 225px;
+    overflow: hidden;
+    text-indent: -50%;
 }
 
 .imagCrop img {
-  max-width: initial;
+    max-width: initial;
 }
 
 .no-pad {
-  padding: 0px;
-}
-
-.boxmiddle {
-  /* background-color: darkgreen; */
-  position: relative;
-  top: -50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    padding: 0px;
 }
 
 #leftBoxAlign {
-  text-align: right;
+    text-align: right;
 }
 
 #scores1 {
-  font-size: 30px;
-  text-decoration: underline;
-}
-
-#spanLeft {
-}
-
-#spanRight {
+    font-size: 30px;
+    text-decoration: underline;
 }
 
 #scores2 {
-  font-size: 30px;
-  text-decoration: underline;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+    .wx-box1 {
+        order: 1;
+    }
+    .wx-box2 {
+        order: 2;
+    }
+    .score-container {
+        order: 3;
+        height: 500px;
+    }
 }
