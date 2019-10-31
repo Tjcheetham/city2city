@@ -110,7 +110,7 @@ TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
     $cityOneTeleSum.text("");
     $cityOneImage.attr("src", "#")
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
-    $cityOneName.text(value.title);
+    $cityOneName.html(value.name + "<br>" + value.country);
     getCityWx(value.latitude, value.longitude, 1)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
     if (value.uaSlug) {
@@ -127,7 +127,7 @@ TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     $cityTwoTeleSum.text("");
     $cityTwoImage.attr("src", "#")
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
-    $cityTwoName.text(value.title);
+    $cityTwoName.html(value.name + "<br>" + value.country);
     getCityWx(value.latitude, value.longitude, 2)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
     if (value.uaSlug) {
