@@ -26,10 +26,10 @@
 <body>
   <section class="section">
     <div class="container body-area">
-      <header class="header"><img class ="logo" src="assets/images/c2c-black.png" alt="header logo"><br>
-            The application built for users who wants to compare metrics on two cities.
+      <header class="header"><img class="logo" src="assets/images/c2c-black.png" alt="header logo"><br>
+        The application built for users who wants to compare metrics on two cities.
       </header>
-      
+
       <hr>
       <div class="cities-background">
         <div class="columns selection-box">
@@ -40,13 +40,8 @@
                 tabindex="1" autocomplete="off">
             </div>
           </div>
-<<<<<<< HEAD
-        
-          <div id="box2" class="column is-6 level-right">
-=======
 
           <div id="box2" class="column is-6">
->>>>>>> 59c29f0b4046f0225935c99f15f0cabf8d4c3da9
             <div class="city-input-div">
               <div class="city-input-div-inside">
                 <div>Enter Second City name</div>
@@ -60,7 +55,7 @@
 
       <hr />
       <!-- Results area from selected cities -->
-      <div class="columns is-mobile is-flex">
+      <div class="columns">
         <div class="column is-6-mobile is-2 wx-box1" id="box1Results">
           <h2><span id="city-1-name">City</span></h2>
           <img id="city-1-wx-icon" src='#' alt="condition icon">
@@ -70,9 +65,6 @@
           <p><span id="city-1-humidity">0</span>%</p><br>
         </div>
 
-        <!-- leftboxalign is so the scores stay to the right and sit side by side with the other score text -->
-        <div class="column is-12-mobile is-8 score-container" id="container"></div>
-
         <div class="column is-6-mobile is-2 wx-box2" id="box2Results">
           <h2><span id="city-2-name">City</span></h2>
           <img id="city-2-wx-icon" src='#' alt="condition icon">
@@ -81,6 +73,11 @@
           <h3>Humidity:&nbsp;</h3>
           <p><span id="city-2-humidity">0</span>%</p><br>
         </div>
+
+        <div class="column is-12-mobile is-8 score-container">
+          <div id="container"></div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -89,7 +86,7 @@
       Copyright ©2019 <br>
       Powered By: <br>
       City Data: Teleport API -- Weather Data: OpenWeather API
-l    </div>
+      l </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>

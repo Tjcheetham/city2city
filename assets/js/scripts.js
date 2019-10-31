@@ -7,8 +7,8 @@ var $cityTwoName = $("#city-2-name");
 var $cityTwoIcon = $("#city-2-wx-icon");
 var $cityTwoTemp = $("#city-2-temp");
 var $cityTwoHumidity = $("#city-2-humidity");
-var $cityOneResults = $('#container');
-var $cityTwoResults = $('#city-two-results');
+var $scoreContainer = $('.score-container');
+var $container = $('#container');
 var $cityOneTeleOverall = $('#city-1-teleport-overall');
 var $cityTwoTeleOverall = $('#city-2-teleport-overall');
 var $cityOneTeleSum = $('#city-1-teleport-summary');
@@ -61,7 +61,7 @@ function getCityData(uaSlug, uaId, whichCity) {
             $cityTwoBoxResults.show()
         }
 
-        $cityOneResults.empty();
+        $container.empty();
 
         //lOOPING THROUGH THE CATECORIES AND DISPLAYING THEM TO SEE WHAT WE HAVE
         for (i = 0; i < response.categories.length; i++) {
@@ -80,7 +80,7 @@ function getCityData(uaSlug, uaId, whichCity) {
                 $cityTwoTeleSum.text(response.summary);
             }
         }
-        $cityOneResults.show();
+        $scoreContainer.show();
         refreshChart();
     })
 
@@ -124,7 +124,7 @@ function getCityWx(lat, lon, whichCity) {
 TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
     if (!value) return;
     console.log(value);
-    $cityOneResults.empty();
+    $container.empty();
     $cityOneTeleOverall.text("");
     $cityOneTeleSum.text("");
     $cityOneImage.attr("src", "#")
@@ -143,7 +143,7 @@ TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
 TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     if (!value) return;
     console.log(value);
-    $cityTwoResults.empty();
+    $container.empty();
     $cityTwoTeleOverall.text("");
     $cityTwoTeleSum.text("");
     $cityTwoImage.attr("src", "#")
