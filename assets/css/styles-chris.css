@@ -10,24 +10,23 @@ body {
 
 .body-area {
     background: #3cc3b2;
+    border: 5px solid black;
     border-radius: 25px;
     padding: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.section {
-    background-image: url("http://giphygifs.s3.amazonaws.com/media/6Npq1sfHCw6K4/giphy.gif");
-    background-size: 60%;
-}
 
 .header {
+    position: relative;
     background-color: #3cc3b2;
     font-size: 18px;
     color: black;
     text-align: center;
-    border-radius: 10px;
-    border: 7px solid black;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    width: 100%;
+    padding: 15px;
+    border-bottom: 7px solid black;
 }
 
 .logo {
@@ -38,9 +37,8 @@ body {
     position: relative;
     bottom: 0;
     border-top: 7px solid black;
-    border-bottom: 7px solid black;
-    width: 100%;
     text-align: center;
+    width: 100%;
     background: #6a737b;
     padding: 10px;
     margin-top: 20px;
@@ -92,6 +90,7 @@ hr {
     z-index: 2;
 }
 
+
 #box2 {
     height: 200px;
     margin-top: auto;
@@ -111,7 +110,8 @@ hr {
 }
 
 .wx-box1 {
-    border: 2px dashed #d3d3d3;
+    background: #fff;
+    /* border: 2px dashed #d3d3d3; */
     border-radius: 15px;
     height: 250px;
     padding: 15px;
@@ -119,19 +119,22 @@ hr {
 }
 
 .overall-1 {
-    border: 2px dashed #d3d3d3;
+    background: #fff;
+    /* border: 2px dashed #d3d3d3; */
     border-radius: 15px;
     height: 125px;
     padding: 15px;
     text-align: center;
 }
 
+
 .side-box-2 {
     order: 3;
 }
 
 .wx-box2 {
-    border: 2px dashed #d3d3d3;
+    background: #fff;
+    /* border: 2px dashed #d3d3d3; */
     border-radius: 15px;
     height: 250px;
     padding: 15px;
@@ -139,7 +142,8 @@ hr {
 }
 
 .overall-2 {
-    border: 2px dashed #d3d3d3;
+    background: #fff;
+    /* border: 2px dashed #d3d3d3; */
     border-radius: 15px;
     height: 125px;
     padding: 15px;
@@ -158,6 +162,23 @@ hr {
     margin-bottom: 20px;
 }
 
+#box1 {
+    height: 200px;
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    margin: auto;
+}
+
+#box2 {
+    height: 200px;
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
 .city-input-div {
     width: 425px;
     background: #6a737b;
@@ -167,6 +188,36 @@ hr {
     border-radius: 10px;
     display: inline-block;
     text-align: center;
+    z-index: 100;
+}
+
+.imagCrop {
+    max-width: 450px;
+    max-height: 225px;
+    overflow: hidden;
+    text-indent: -50%;
+}
+
+.imagCrop img {
+    max-width: initial;
+}
+
+.no-pad {
+    padding: 0px;
+}
+
+#leftBoxAlign {
+    text-align: right;
+}
+
+#scores1 {
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+#scores2 {
+    font-size: 30px;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 767px) {

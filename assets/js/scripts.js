@@ -69,13 +69,13 @@ function getCityData(uaSlug, uaId, whichCity) {
         for (i = 0; i < response.categories.length; i++) {
             //DETERMINING WHICH DIV TO POPULATE
             if (whichCity == 1) {
-                dataArray[i][1] = response.categories[i].score_out_of_10.toFixed(1);
+                dataArray[i][1] = "-" + response.categories[i].score_out_of_10.toFixed(1);
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityOneTeleOverall.text(response.teleport_city_score.toFixed(2));
                 $cityOneTeleSum.text(response.summary);
             }
             else {
-                dataArray[i][2] = "-" + response.categories[i].score_out_of_10.toFixed(1)
+                dataArray[i][2] = response.categories[i].score_out_of_10.toFixed(1)
 
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityTwoTeleOverall.text(response.teleport_city_score.toFixed(2));
