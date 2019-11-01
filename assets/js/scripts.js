@@ -7,8 +7,8 @@ var $cityTwoName = $("#city-2-name");
 var $cityTwoIcon = $("#city-2-wx-icon");
 var $cityTwoTemp = $("#city-2-temp");
 var $cityTwoHumidity = $("#city-2-humidity");
-var $cityOneResults = $('#container');
-var $cityTwoResults = $('#city-two-results');
+var $scoreContainer = $('.score-container');
+var $container = $('#container');
 var $cityOneTeleOverall = $('#city-1-teleport-overall');
 var $cityTwoTeleOverall = $('#city-2-teleport-overall');
 var $cityOneTeleSum = $('#city-1-teleport-summary');
@@ -19,6 +19,8 @@ var $cityOneBox = $('#box1');
 var $cityTwoBox = $('#box2');
 var $cityOneBoxResults = $('#box1Results');
 var $cityTwoBoxResults = $('#box2Results');
+var $cityOverallScore1 = $('#overall-1');
+var $cityOverallScore2 = $('#overall-2');
 var cityOneHasData = false;
 var cityTwoHasData = false;
 var cityOneDataArray = [];
@@ -54,33 +56,33 @@ function getCityData(uaSlug, uaId, whichCity) {
         //STORE THE DATA TO COMPARE LATER
         if (whichCity == 1) {
             cityOneDataArray = response.categories;
-            $cityOneBoxResults.show()
+            $cityOverallScore1.removeClass("hide-div");
         }
         else {
             cityTwoDataArray = response.categories;
-            $cityTwoBoxResults.show()
+            $cityOverallScore2.removeClass("hide-div");
         }
 
-        $cityOneResults.empty();
+        $container.empty();
 
         //lOOPING THROUGH THE CATECORIES AND DISPLAYING THEM TO SEE WHAT WE HAVE
         for (i = 0; i < response.categories.length; i++) {
             //DETERMINING WHICH DIV TO POPULATE
             if (whichCity == 1) {
-                dataArray[i][1] = response.categories[i].score_out_of_10.toFixed(1);
+                dataArray[i][1] = "-" + response.categories[i].score_out_of_10.toFixed(1);
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityOneTeleOverall.text(response.teleport_city_score.toFixed(2));
                 $cityOneTeleSum.text(response.summary);
             }
             else {
-                dataArray[i][2] = "-" + response.categories[i].score_out_of_10.toFixed(1)
+                dataArray[i][2] = response.categories[i].score_out_of_10.toFixed(1)
 
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityTwoTeleOverall.text(response.teleport_city_score.toFixed(2));
                 $cityTwoTeleSum.text(response.summary);
             }
         }
-        $cityOneResults.show();
+        $scoreContainer.show();
         refreshChart();
     })
 
@@ -111,11 +113,13 @@ function getCityWx(lat, lon, whichCity) {
             $cityOneTemp.text(response.main.temp.toFixed(1));
             $cityOneHumidity.text(response.main.humidity);
             $cityOneIcon.attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
+            $cityOneBoxResults.removeClass("hide-div");
         }
         else {
             $cityTwoTemp.text(response.main.temp.toFixed(1));
             $cityTwoHumidity.text(response.main.humidity);
             $cityTwoIcon.attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
+            $cityTwoBoxResults.removeClass("hide-div");
         }
     })
 }
@@ -124,7 +128,7 @@ function getCityWx(lat, lon, whichCity) {
 TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
     if (!value) return;
     console.log(value);
-    $cityOneResults.empty();
+    $container.empty();
     $cityOneTeleOverall.text("");
     $cityOneTeleSum.text("");
     $cityOneImage.attr("src", "#")
@@ -143,7 +147,7 @@ TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
 TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     if (!value) return;
     console.log(value);
-    $cityTwoResults.empty();
+    $container.empty();
     $cityTwoTeleOverall.text("");
     $cityTwoTeleSum.text("");
     $cityTwoImage.attr("src", "#")

@@ -26,55 +26,64 @@
 <body>
   <section class="section">
     <div class="container body-area">
-      <header class="header"><img class ="logo" src="assets/images/c2c-black.png" alt="header logo"><br>
-            The application built for users who wants to compare metrics on two cities.
+      <header class="header"><img class="logo" src="assets/images/c2c-black.png" alt="header logo"><br>
+        The application built for users who wants to compare metrics on two cities.
       </header>
-      
-      <hr>
-      <div class="cities-background">
-        <div class="columns selection-box">
-          <div id="box1" class="column is-6">
-            <div class="city-input-div">
-              <div class="textBox">Enter First City name</div>
-              <input type="text" id="city-choice-1" class="input is-rounded" name="city-1" placeholder="City Name"
-                tabindex="1" autocomplete="off">
-            </div>
-          </div>
 
-          <div id="box2" class="column is-6">
-            <div class="city-input-div">
-              <div class="city-input-div-inside">
-                <div>Enter Second City name</div>
-                <input type="text" id="city-choice-2" class="input is-rounded" name="city-2" placeholder="City Name"
-                  tabindex="2" autocomplete="off">
-              </div>
-            </div>
+      <hr>
+      <div class="columns cities-background">
+        <div id="box1" class="column is-6">
+          <div class="city-input-div">
+            <div class="textBox">Enter First City Name</div>
+            <input type="text" id="city-choice-1" class="input is-rounded" name="city-1" placeholder="City Name"
+              tabindex="1" autocomplete="off">
+          </div>
+        </div>
+        <div id="box2" class="column is-6">
+          <div class="city-input-div">
+            <div>Enter Second City Name</div>
+            <input type="text" id="city-choice-2" class="input is-rounded" name="city-2" placeholder="City Name"
+              tabindex="2" autocomplete="off">
           </div>
         </div>
       </div>
 
       <hr />
-      <!-- Results area from selected cities -->
-      <div class="columns is-mobile is-flex">
-        <div class="column is-6-mobile is-2 wx-box1" id="box1Results">
-          <h2><span id="city-1-name">City</span></h2>
-          <img id="city-1-wx-icon" src='#' alt="condition icon">
-          <h3>Temperature:&nbsp;</h3>
-          <p><span id="city-1-temp">0</span>&#176;F</p><br>
-          <h3>Humidity:&nbsp;</h3>
-          <p><span id="city-1-humidity">0</span>%</p><br>
+      <!-- WEATHER DIVS -->
+      <div class="columns">
+        <div class="column is-6-mobile is-2 side-box-1">
+          <div class="hide-div wx-box1" id="box1Results">
+            <h2><span id="city-1-name">City</span></h2>
+            <img id="city-1-wx-icon" src='#' alt="condition icon">
+            <h3>Temperature:&nbsp;</h3>
+            <p><span id="city-1-temp">0</span>&#176;F</p><br>
+            <h3>Humidity:&nbsp;</h3>
+            <p><span id="city-1-humidity">0</span>%</p><br>
+          </div>
+          <br>
+          <div class="hide-div overall-1" id="overall-1">
+            <h2>Overall City Score</h2>
+            <h1><span id="city-1-teleport-overall"></span></h1>
+          </div>
         </div>
-
-        <!-- leftboxalign is so the scores stay to the right and sit side by side with the other score text -->
-        <div class="column is-12-mobile is-8 score-container" id="container"></div>
-
-        <div class="column is-6-mobile is-2 wx-box2" id="box2Results">
-          <h2><span id="city-2-name">City</span></h2>
-          <img id="city-2-wx-icon" src='#' alt="condition icon">
-          <h3>Temperature:&nbsp;</h3>
-          <p><span id="city-2-temp">0</span>&#176;F</p><br>
-          <h3>Humidity:&nbsp;</h3>
-          <p><span id="city-2-humidity">0</span>%</p><br>
+        <div class="column is-6-mobile is-2 side-box-2">
+          <div class="hide-div wx-box2" id="box2Results">
+            <h2><span id="city-2-name">City</span></h2>
+            <img id="city-2-wx-icon" src='#' alt="condition icon">
+            <h3>Temperature:&nbsp;</h3>
+            <p><span id="city-2-temp">0</span>&#176;F</p><br>
+            <h3>Humidity:&nbsp;</h3>
+            <p><span id="city-2-humidity">0</span>%</p><br>
+          </div>
+          <br>
+          <div class="hide-div overall-2" id="overall-2">
+            <h2>Overall City Score</h2>
+            <h1><span id="city-2-teleport-overall"></span></h1>
+          </div>
+        </div>
+        <!-- THE SCORES CONTAINER -->
+        <div class="column is-12-mobile is-8 score-container">
+          <div id="container"></div>
         </div>
       </div>
     </div>
@@ -84,7 +93,7 @@
       Copyright ©2019 <br>
       Powered By: <br>
       City Data: Teleport API -- Weather Data: OpenWeather API
-l    </div>
+    </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
