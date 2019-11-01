@@ -19,6 +19,8 @@ var $cityOneBox = $('#box1');
 var $cityTwoBox = $('#box2');
 var $cityOneBoxResults = $('#box1Results');
 var $cityTwoBoxResults = $('#box2Results');
+var $cityOverallScore1 = $('#overall-1');
+var $cityOverallScore2 = $('#overall-2');
 var cityOneHasData = false;
 var cityTwoHasData = false;
 var cityOneDataArray = [];
@@ -54,11 +56,11 @@ function getCityData(uaSlug, uaId, whichCity) {
         //STORE THE DATA TO COMPARE LATER
         if (whichCity == 1) {
             cityOneDataArray = response.categories;
-            $cityOneBoxResults.show()
+            $cityOverallScore1.removeClass("hide-div");
         }
         else {
             cityTwoDataArray = response.categories;
-            $cityTwoBoxResults.show()
+            $cityOverallScore2.removeClass("hide-div");
         }
 
         $container.empty();
@@ -111,11 +113,13 @@ function getCityWx(lat, lon, whichCity) {
             $cityOneTemp.text(response.main.temp.toFixed(1));
             $cityOneHumidity.text(response.main.humidity);
             $cityOneIcon.attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
+            $cityOneBoxResults.removeClass("hide-div");
         }
         else {
             $cityTwoTemp.text(response.main.temp.toFixed(1));
             $cityTwoHumidity.text(response.main.humidity);
             $cityTwoIcon.attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
+            $cityTwoBoxResults.removeClass("hide-div");
         }
     })
 }
