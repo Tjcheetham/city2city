@@ -50,7 +50,7 @@
 
       <hr />
       <!-- WEATHER DIVS -->
-      <div class="columns">
+      <div class="columns is-flex">
         <div class="column is-6-mobile is-2 side-box-1">
           <div class="hide-div wx-box1" id="box1Results">
             <h2><span id="city-1-name">City</span></h2>
@@ -66,6 +66,10 @@
             <h1><span id="city-1-teleport-overall"></span></h1>
           </div>
         </div>
+        <!-- THE SCORES CONTAINER -->
+        <div class="column is-12-mobile is-8 score-container hide-div">
+          <div id="container"></div>
+        </div>
         <div class="column is-6-mobile is-2 side-box-2">
           <div class="hide-div wx-box2" id="box2Results">
             <h2><span id="city-2-name">City</span></h2>
@@ -80,10 +84,6 @@
             <h2>Overall City Score</h2>
             <h1><span id="city-2-teleport-overall"></span></h1>
           </div>
-        </div>
-        <!-- THE SCORES CONTAINER -->
-        <div class="column is-12-mobile is-8 score-container">
-          <div id="container"></div>
         </div>
       </div>
     </div>

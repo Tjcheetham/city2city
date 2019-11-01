@@ -156,7 +156,6 @@ hr {
 
 .score-container {
     order: 2;
-    display: none;
     width: 600px;
     height: 500px;
     margin-bottom: 20px;
@@ -181,6 +180,7 @@ hr {
         order: 2;
     }
     .score-container {
+        display: inline-flexbox;
         order: 3;
         height: 500px;
     }

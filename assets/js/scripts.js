@@ -52,7 +52,6 @@ function getCityData(uaSlug, uaId, whichCity) {
         url: "https://api.teleport.org/api/urban_areas/slug:" + uaSlug + "/scores/",
         method: "GET"
     }).then(function (response) {
-        console.log(response);
         //STORE THE DATA TO COMPARE LATER
         if (whichCity == 1) {
             cityOneDataArray = response.categories;
@@ -69,20 +68,19 @@ function getCityData(uaSlug, uaId, whichCity) {
         for (i = 0; i < response.categories.length; i++) {
             //DETERMINING WHICH DIV TO POPULATE
             if (whichCity == 1) {
-                dataArray[i][1] = "-" + response.categories[i].score_out_of_10.toFixed(1);
+                dataArray[i][2] = "-" + response.categories[i].score_out_of_10.toFixed(1)
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityOneTeleOverall.text(response.teleport_city_score.toFixed(2));
                 $cityOneTeleSum.text(response.summary);
             }
             else {
-                dataArray[i][2] = response.categories[i].score_out_of_10.toFixed(1)
-
+                dataArray[i][1] = response.categories[i].score_out_of_10.toFixed(1);
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityTwoTeleOverall.text(response.teleport_city_score.toFixed(2));
                 $cityTwoTeleSum.text(response.summary);
             }
         }
-        $scoreContainer.show();
+        $scoreContainer.removeClass("hide-div");
         refreshChart();
     })
 
@@ -91,7 +89,6 @@ function getCityData(uaSlug, uaId, whichCity) {
         url: "https://api.teleport.org/api/urban_areas/slug:" + uaSlug + "/images/",
         method: "GET"
     }).then(function (response) {
-        console.log(response.photos[0].image.web);
         if (whichCity == 1) {
             // $cityOneImage.attr("src", response.photos[0].image.web);
             $cityOneBox.css("background-image", "url(" + response.photos[0].image.web + ")");
@@ -165,8 +162,6 @@ TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
 function refreshChart() {
     // create data set
     var dataSet = anychart.data.set(dataArray);
-
-    console.log(dataSet);
 
     // map data for the first series, take x from the zero column and value from the first column of data set
     var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
