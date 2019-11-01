@@ -20,11 +20,20 @@ The API is full of data that we have just scratched the surface of. We are also 
 - [Open Weather](https://openweathermap.org/current/) - Weather API
 ​
 ### Screenshots
+​Phone Landing page ------------------- Phone Results page
+
+![Image](assets/images/phone_landing.jpg)                    ![Image](assets/images/phone_results.jpg)
 ​
-![Image](assets/images/fullscreen.png)
+
+Desktop Landing page
+
+![Image](assets/images/c2c-landing.jpg)
 ​
-![Image](assets/images/smallscreen.png)
+
+Desktop Results page
+
+![Image](assets/images/c2c-results.jpg)
 ​
 ### Link
 Check it out! 
-https://xxx.github.io/city2city/
+https://tjcheetham.github.io/city2city/
