@@ -148,9 +148,9 @@ TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     if (!value) return;
     $cityTwoTeleOverall.text("");
     $cityTwoTeleSum.text("");
-    $cityTwoImage.attr("src", "#")
+    $cityTwoImage.attr("src", "#");
     //USING THE LAT LON FROM THE RESULTS TO GET THE PROPER WX
-    currentCityNameTwo = value.name + ", " + value.country
+    currentCityNameTwo = value.name + ", " + value.country;
     $cityTwoName.html(value.name + "<br>" + value.country);
     getCityWx(value.latitude, value.longitude, 2)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA

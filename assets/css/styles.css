@@ -76,7 +76,7 @@ hr {
 .cities-background {
     position: relative;
     background: #fff;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-image: url("../images/citybackdrop2.png");
     background-position: center;
     border-radius: 25px;
