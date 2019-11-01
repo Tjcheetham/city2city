@@ -87,18 +87,18 @@ hr {
 .cities-background {
     position: relative;
     background: #fff;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-image: url("../images/citybackdrop2.png");
     background-position: center;
     border-radius: 25px;
     /* opacity: 0.3; */
     filter: alpha(opacity=30);
     padding: 0;
-    height: 125px
+    height: 125px;
 }
 
 #box1 {
-    height: 200px;
+    height: 125px;
     margin-top: auto;
     background-position: center;
     opacity: 0.8;
@@ -109,7 +109,7 @@ hr {
 }
 
 #box2 {
-    height: 200px;
+    height: 125px;
     margin-top: auto;
     background-position: center;
     opacity: 0.8;
