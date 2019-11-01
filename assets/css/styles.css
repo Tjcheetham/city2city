@@ -5,17 +5,14 @@
 */
 
 body {
-<<<<<<< HEAD
-    background: #d3d3d3;
-=======
   background: lightgray;
->>>>>>> f592b88d308e1dd8ff5f9eb9963ab6f52fb7dde4
 }
 
 .body-area {
-  background: #3cc3b2;
+  background: #6a737b;
   border-radius: 25px;
   padding: 25px;
+  border: 1px solid black;
 }
 
 .section {
@@ -24,12 +21,12 @@ body {
 }
 
 .header {
-  background-color: #3cc3b2;
+  background-color:#6a737b;
   font-size: 18px;
-  color: black;
+  color: white;
   text-align: center;
   border-radius: 10px;
-  border: 7px solid black;
+  border: 7px solid #3cc3b2;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -47,8 +44,7 @@ body {
     text-align: center;
     background: #6a737b;
     padding: 10px;
-    margin-top: 20px;
-    color: #d3d3d3;
+    color: black;
 }
 
 h1 {
@@ -120,6 +116,7 @@ hr {
     height: 250px;
     padding: 15px;
     text-align: center;
+    background-color: #3cc3b2;
 }
 
 .overall-1 {
@@ -128,6 +125,7 @@ hr {
     height: 125px;
     padding: 15px;
     text-align: center;
+    background-color: #3cc3b2
 }
 
 .side-box-2 {
@@ -140,6 +138,7 @@ hr {
     height: 250px;
     padding: 15px;
     text-align: center;
+    background-color: #3cc3b2
 }
 
 .overall-2 {
@@ -148,6 +147,7 @@ hr {
     height: 125px;
     padding: 15px;
     text-align: center;
+    background-color: #3cc3b2
 }
 
 #container {
@@ -165,12 +165,13 @@ hr {
 .city-input-div {
     width: 425px;
     background: #6a737b;
-    color: #d3d3d3;
+    color: black;
     opacity: none;
     padding: 5px;
     border-radius: 10px;
     display: inline-block;
     text-align: center;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 767px) {
