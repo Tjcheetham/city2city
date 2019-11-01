@@ -71,7 +71,7 @@ hr {
     position: relative;
     background: #fff;
     overflow: hidden;
-    background-image: url("../images/citybackdrop2.png");
+    /* background-image: url("../images/citybackdrop2.png"); */
     background-position: center;
     border-radius: 25px;
     /* opacity: 0.3; */
