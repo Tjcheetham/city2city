@@ -20,14 +20,10 @@ The API is full of data that we have just scratched the surface of. We are also 
 - [Open Weather](https://openweathermap.org/current/) - Weather API
 ​
 ### Screenshots
-​Phone Landing page
+​Phone Landing page ------------------- Phone Results page
 
-![Image](assets/images/phone_landing.jpg)
+![Image](assets/images/phone_landing.jpg)                    ![Image](assets/images/phone_results.jpg)
 ​
-
-Phone Results page
-
-![Image](assets/images/phone_results.jpg)
 
 Desktop Landing page
 
