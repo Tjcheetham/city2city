@@ -3,7 +3,6 @@
 #3cc3b2
 #d3d3d3
 */
-
 html {
     background: #d3d3d3;
 }
@@ -16,7 +15,7 @@ body {
     background: #3cc3b2;
     border: 5px solid black;
     border-radius: 25px;
-    padding: 25px;
+    padding: 10px;
     margin-top: 30px;
     margin-bottom: 10px;
 }
@@ -30,7 +29,7 @@ body {
     margin-bottom: 140px;
 }
 
-.section-adjust {
+.section-adjust{
     /* height: 100%; */
     background: #d3d3d3;
     margin: 0;
@@ -94,6 +93,8 @@ hr {
     border-radius: 25px;
     /* opacity: 0.3; */
     filter: alpha(opacity=30);
+    padding: 0;
+    height: 125px
 }
 
 #box1 {
@@ -143,6 +144,7 @@ hr {
     text-align: center;
 }
 
+
 .side-box-2 {
     order: 3;
 }
@@ -176,23 +178,6 @@ hr {
     margin-bottom: 20px;
 }
 
-#box1 {
-    height: 200px;
-    margin-top: auto;
-    background-position: center;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    margin: auto;
-}
-
-#box2 {
-    height: 200px;
-    margin-top: auto;
-    background-position: center;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-}
-
 .city-input-div {
     width: 425px;
     background: #6a737b;
@@ -203,35 +188,6 @@ hr {
     display: inline-block;
     text-align: center;
     z-index: 100;
-}
-
-.imagCrop {
-    max-width: 450px;
-    max-height: 225px;
-    overflow: hidden;
-    text-indent: -50%;
-}
-
-.imagCrop img {
-    max-width: initial;
-}
-
-.no-pad {
-    padding: 0px;
-}
-
-#leftBoxAlign {
-    text-align: right;
-}
-
-#scores1 {
-    font-size: 30px;
-    text-decoration: underline;
-}
-
-#scores2 {
-    font-size: 30px;
-    text-decoration: underline;
 }
 
 @media screen and (max-width: 767px) {
