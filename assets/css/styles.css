@@ -76,17 +76,31 @@ hr {
 }
 
 #box1 {
-  height: 200px;
-  background-position: center;
-  opacity: none;
-  z-index: 2;
+    height: 200px;
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    margin: auto;
+    border-right: 5px solid #6a737b;
+    text-align: center;
+    background-position: center;
+    opacity: none;
+    z-index: 2;
 }
 
 #box2 {
-  height: 200px;
-  background-position: center;
-  opacity: none;
-  z-index: 3;
+    height: 200px;
+    margin-top: auto;
+    margin:auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    text-align: center;
+
+    background-position: center;
+    opacity: none;
+    z-index: 3;
 }
 
 .wx-box1 {
@@ -127,11 +141,11 @@ hr {
 }
 
 #box2 {
-  height: 200px;
-  margin-top: auto;
-  background-position: center;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+    height: 200px;
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
 }
 
 .wx-box {
@@ -141,21 +155,20 @@ hr {
 }
 
 .city-input-div {
-  width: 425px;
-  background: white;
-  opacity: none;
-  filter: alpha(opacity=70);
-  padding: 5px;
-  border-radius: 10px;
-  margin-top: auto;
-  align-content: flex-end;
-  /* text-align: right; */
+    width: 425px;
+    background: #6a737b;
+    opacity: none;
+    filter: alpha(opacity=70);
+    padding: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
 }
 
 .city-input-div-inside {
-  background: white;
-  opacity: 0.8;
-  filter: alpha(opacity=100);
+    background: #6a737b;
+    opacity: .8;
+    filter: alpha(opacity=100);
 }
 
 .imagCrop {
