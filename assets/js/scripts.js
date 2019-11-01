@@ -62,13 +62,11 @@ function getCityData(uaSlug, uaId, whichCity) {
             $cityOverallScore2.removeClass("hide-div");
         }
 
-        $container.empty();
-
         //lOOPING THROUGH THE CATECORIES AND DISPLAYING THEM TO SEE WHAT WE HAVE
         for (i = 0; i < response.categories.length; i++) {
             //DETERMINING WHICH DIV TO POPULATE
             if (whichCity == 1) {
-                dataArray[i][2] = "-" + response.categories[i].score_out_of_10.toFixed(1)
+                dataArray[i][2] = "-" + response.categories[i].score_out_of_10.toFixed(1);
                 //OVERALL SCORE CALCULATED BY TELEPORT
                 $cityOneTeleOverall.text(response.teleport_city_score.toFixed(2));
                 $cityOneTeleSum.text(response.summary);
@@ -80,11 +78,9 @@ function getCityData(uaSlug, uaId, whichCity) {
                 $cityTwoTeleSum.text(response.summary);
             }
         }
-        $scoreContainer.removeClass("hide-div");
         refreshChart();
     })
 
-    console.log(uaId)
     $.ajax({
         url: "https://api.teleport.org/api/urban_areas/slug:" + uaSlug + "/images/",
         method: "GET"
@@ -124,8 +120,6 @@ function getCityWx(lat, lon, whichCity) {
 //TELEPORTS AUTO COMPLETE FOR CITY 1
 TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
     if (!value) return;
-    console.log(value);
-    $container.empty();
     $cityOneTeleOverall.text("");
     $cityOneTeleSum.text("");
     $cityOneImage.attr("src", "#")
@@ -135,16 +129,21 @@ TeleportAutocomplete.init('#city-choice-1').on('change', function (value) {
     getCityWx(value.latitude, value.longitude, 1)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
     if (value.uaSlug) {
+        console.log(value.uaSlug)
         cityOneHasData = true;
         getCityData(value.uaSlug, value.uaId, 1);
+    }
+    else {
+        for (i = 0; i < dataArray.length; i++) {
+            dataArray[i][2] = 0;
+        }
+        refreshChart();
     }
 });
 
 //TELEPORTS AUTO COMPLETE FOR CITY 2
 TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     if (!value) return;
-    console.log(value);
-    $container.empty();
     $cityTwoTeleOverall.text("");
     $cityTwoTeleSum.text("");
     $cityTwoImage.attr("src", "#")
@@ -154,12 +153,21 @@ TeleportAutocomplete.init('#city-choice-2').on('change', function (value) {
     getCityWx(value.latitude, value.longitude, 2)
     //CHECKING TO MAKE SURE WE CAN GET URBAN DATA
     if (value.uaSlug) {
+        console.log(value.uaSlug)
         cityTwoHasData = true;
         getCityData(value.uaSlug, value.uaId, 2);
+    }
+    else {
+        for (i = 0; i < dataArray.length; i++) {
+            dataArray[i][1] = 0;
+        }
+        refreshChart();
     }
 });
 
 function refreshChart() {
+    $scoreContainer.removeClass("hide-div");
+    $container.empty();
     // create data set
     var dataSet = anychart.data.set(dataArray);
 
