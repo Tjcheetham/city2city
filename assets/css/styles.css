@@ -76,17 +76,23 @@ hr {
 }
 
 #box1 {
-  height: 200px;
-  background-position: center;
-  opacity: none;
-  z-index: 2;
+    height: 200px;
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    border-right: 5px solid #6a737b;
+    text-align: center;
 }
 
 #box2 {
-  height: 200px;
-  background-position: center;
-  opacity: none;
-  z-index: 3;
+    height: 200px;
+    margin-top: auto;
+    background-position: center;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    text-align: center;
+    z-index: 3
 }
 
 .wx-box1 {
@@ -117,23 +123,6 @@ hr {
   filter: alpha(opacity=30);
 }
 
-#box1 {
-  height: 200px;
-  margin-top: auto;
-  background-position: center;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  margin: auto;
-}
-
-#box2 {
-  height: 200px;
-  margin-top: auto;
-  background-position: center;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-
 .wx-box {
   border: 2px dashed black;
   border-radius: 15px;
@@ -141,21 +130,14 @@ hr {
 }
 
 .city-input-div {
-  width: 425px;
-  background: white;
-  opacity: none;
-  filter: alpha(opacity=70);
-  padding: 5px;
-  border-radius: 10px;
-  margin-top: auto;
-  align-content: flex-end;
-  /* text-align: right; */
-}
-
-.city-input-div-inside {
-  background: white;
-  opacity: 0.8;
-  filter: alpha(opacity=100);
+    width: 425px;
+    background: #6a737b;
+    color: #d3d3d3;
+    opacity: none;
+    padding: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
 }
 
 .imagCrop {
