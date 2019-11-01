@@ -12,21 +12,25 @@ body {
 }
 
 .body-area {
+    display: block;
     background: #3cc3b2;
     border: 5px solid black;
     border-radius: 25px;
     padding: 10px;
     margin-top: 30px;
     margin-bottom: 10px;
+    z-index: 10;
 }
 
 .body-area2 {
+    display: block;
     background: #3cc3b2;
     border: 5px solid black;
     border-radius: 25px;
     padding: 25px;
     margin-top: 30px;
     margin-bottom: 140px;
+    z-index: 5;
 }
 
 .section-adjust{
@@ -85,7 +89,7 @@ hr {
 }
 
 .cities-background {
-    position: relative;
+    position: block;
     background: #fff;
     /* overflow: hidden; */
     background-image: url("../images/citybackdrop2.png");
@@ -94,7 +98,6 @@ hr {
     /* opacity: 0.3; */
     filter: alpha(opacity=30);
     padding: 0;
-    height: 125px;
 }
 
 #box1 {
@@ -103,9 +106,8 @@ hr {
     background-position: center;
     opacity: 0.8;
     filter: alpha(opacity=80);
-    border-right: 5px solid #6a737b;
     text-align: center;
-    z-index: 2;
+    z-index: 20;
 }
 
 #box2 {
@@ -115,7 +117,11 @@ hr {
     opacity: 0.8;
     filter: alpha(opacity=80);
     text-align: center;
-    z-index: 3;
+    z-index: 15;
+}
+
+.input-adjust {
+    width: 325px;
 }
 
 .hide-div {
@@ -179,7 +185,7 @@ hr {
 }
 
 .city-input-div {
-    width: 425px;
+    width: 350px;
     background: #6a737b;
     color: #d3d3d3;
     opacity: none;
@@ -187,18 +193,23 @@ hr {
     border-radius: 10px;
     display: inline-block;
     text-align: center;
-    z-index: 100;
 }
 
 @media screen and (max-width: 767px) {
     .side-box-1 {
         order: 1;
     }
+
     .side-box-2 {
         order: 2;
     }
+
     .score-container {
         order: 3;
         height: 500px;
+    }
+    
+    .footer {
+        position: relative;
     }
 }
