@@ -81,26 +81,31 @@ hr {
     background-position: center;
     opacity: 0.8;
     filter: alpha(opacity=80);
-    margin: auto;
     border-right: 5px solid #6a737b;
     text-align: center;
+<<<<<<< HEAD
     background-position: center;
     opacity: none;
     z-index: 2;
+=======
+>>>>>>> f592b88d308e1dd8ff5f9eb9963ab6f52fb7dde4
 }
 
 #box2 {
     height: 200px;
     margin-top: auto;
-    margin:auto;
     background-position: center;
     opacity: 0.8;
     filter: alpha(opacity=80);
     text-align: center;
+<<<<<<< HEAD
 
     background-position: center;
     opacity: none;
     z-index: 3;
+=======
+    z-index: 3
+>>>>>>> f592b88d308e1dd8ff5f9eb9963ab6f52fb7dde4
 }
 
 .wx-box1 {
@@ -131,6 +136,7 @@ hr {
   filter: alpha(opacity=30);
 }
 
+<<<<<<< HEAD
 #box1 {
   height: 200px;
   margin-top: auto;
@@ -148,6 +154,8 @@ hr {
     filter: alpha(opacity=80);
 }
 
+=======
+>>>>>>> f592b88d308e1dd8ff5f9eb9963ab6f52fb7dde4
 .wx-box {
   border: 2px dashed black;
   border-radius: 15px;
@@ -157,20 +165,23 @@ hr {
 .city-input-div {
     width: 425px;
     background: #6a737b;
+    color: #d3d3d3;
     opacity: none;
-    filter: alpha(opacity=70);
     padding: 5px;
     border-radius: 10px;
     display: inline-block;
     text-align: center;
 }
 
+<<<<<<< HEAD
 .city-input-div-inside {
     background: #6a737b;
     opacity: .8;
     filter: alpha(opacity=100);
 }
 
+=======
+>>>>>>> f592b88d308e1dd8ff5f9eb9963ab6f52fb7dde4
 .imagCrop {
   max-width: 450px;
   max-height: 225px;
