@@ -105,6 +105,10 @@ hr {
     z-index: 3;
 }
 
+.input-adjust {
+    width: 325px;
+}
+
 .hide-div {
     display: none;
 }
@@ -165,7 +169,7 @@ hr {
 }
 
 .city-input-div {
-    width: 425px;
+    width: 350px;
     background: #6a737b;
     color: black;
     opacity: none;
