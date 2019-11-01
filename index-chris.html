@@ -24,12 +24,11 @@
 </head>
 
 <body>
-    <header class="header"><img class="logo" src="assets/images/c2c-black.png" alt="header logo"><br>
-      The application built for users who wants to compare metrics on two cities.
-    </header>
-  <section class="section">
+  <header class="header"><img class="logo" src="assets/images/c2c-black.png" alt="header logo"><br>
+    The application built for users who wants to compare metrics on two cities.
+  </header>
+  <section class="section section-adjust">
     <div class="container body-area">
-      <br>
       <div class="columns cities-background">
         <div id="box1" class="column is-6">
           <div class="city-input-div">
@@ -46,8 +45,8 @@
           </div>
         </div>
       </div>
-
-      <hr />
+    </div>
+    <div class="container hide-div body-area2" id="main-body-area">
       <!-- WEATHER DIVS -->
       <div class="columns is-multiline is-flex">
         <div class="column is-6-mobile is-2 side-box-1">
@@ -62,7 +61,7 @@
           <br>
           <div class="hide-div overall-1" id="overall-1">
             <h2>Overall City Score</h2>
-            <h1><span id="city-1-teleport-overall"></span></h1>
+            <h1 id="city-1-teleport-overall">0</h1>
           </div>
         </div>
         <div class="column is-6-mobile is-2 side-box-2">
@@ -76,8 +75,8 @@
           </div>
           <br>
           <div class="hide-div overall-2" id="overall-2">
-              <h2>Overall City Score</h2>
-            <h1><span id="city-2-teleport-overall"></span></h1>
+            <h2>Overall City Score</h2>
+            <h1 id="city-2-teleport-overall">0</h1>
           </div>
         </div>
         <!-- THE SCORES CONTAINER -->
@@ -85,7 +84,7 @@
           <div id="container"></div>
         </div>
       </div>
-      </div>
+    </div>
   </section>
   <footer>
     <div class="footer">

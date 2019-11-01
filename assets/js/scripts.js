@@ -21,6 +21,7 @@ var $cityOneBoxResults = $('#box1Results');
 var $cityTwoBoxResults = $('#box2Results');
 var $cityOverallScore1 = $('#overall-1');
 var $cityOverallScore2 = $('#overall-2');
+var $mainBodyArea = $('#main-body-area');
 var cityOneHasData = false;
 var cityTwoHasData = false;
 var cityOneDataArray = [];
@@ -97,6 +98,7 @@ function getCityData(uaSlug, uaId, whichCity) {
 }
 
 function getCityWx(lat, lon, whichCity) {
+    if($mainBodyArea){$mainBodyArea.removeClass("hide-div")}
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + apiKey,
         method: "GET"

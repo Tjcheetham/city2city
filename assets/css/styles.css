@@ -4,35 +4,39 @@
 #d3d3d3
 */
 
+html {
+    background: #d3d3d3;
+}
+
 body {
-  background: #d3d3d3;
+    background: #d3d3d3;
 }
 
 .body-area {
-  background: #6a737b;
-  border-radius: 25px;
-  padding: 25px;
-  border: 1px solid black;
+    background: #6a737b;
+    border-radius: 25px;
+    padding: 25px;
+    border: 1px solid black;
 }
 
 .section {
-  background-image: url("http://giphygifs.s3.amazonaws.com/media/6Npq1sfHCw6K4/giphy.gif");
-  background-size: 60%;
+    background-image: url("http://giphygifs.s3.amazonaws.com/media/6Npq1sfHCw6K4/giphy.gif");
+    background-size: 60%;
 }
 
 .header {
-  background-color:#6a737b;
-  font-size: 18px;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  border: 7px solid #3cc3b2;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    background-color: #6a737b;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    border: 7px solid #3cc3b2;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .logo {
-  margin-bottom: -10px;
+    margin-bottom: -10px;
 }
 
 .footer {
@@ -66,7 +70,7 @@ h3 {
 }
 
 hr {
-  background-color: #0a080a;
+    background-color: #0a080a;
 }
 
 .cities-background {
@@ -78,7 +82,6 @@ hr {
     border-radius: 25px;
     /* opacity: 0.3; */
     filter: alpha(opacity=30);
-
 }
 
 #box1 {
